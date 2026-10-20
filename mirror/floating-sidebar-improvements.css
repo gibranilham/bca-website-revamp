@@ -1,0 +1,115 @@
+/* Desktop quick actions from Figma frame 6:767. Keep the existing controls and links. */
+@media (min-width: 1280px) {
+  #main-content aside[aria-label="Akses cepat"] {
+    right: 24px;
+    width: 81px;
+    height: 410px;
+    padding: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background:
+      linear-gradient(rgba(18, 20, 23, 0.5), rgba(18, 20, 23, 0.5)) padding-box,
+      linear-gradient(135deg, rgba(255, 255, 255, 0.38), transparent 50%, rgba(255, 255, 255, 0.38)) border-box;
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    backdrop-filter: blur(16px) saturate(1.2);
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > div > div {
+    flex: 0 0 100px;
+    width: 71px;
+    height: 100px;
+    border-radius: 40px;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(1) {
+    order: 1;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(2) { order: 3; }
+  #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(3) { order: 2; }
+  #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(4) { order: 4; }
+  #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(5) { display: none; }
+
+  #main-content aside[aria-label="Akses cepat"] button,
+  #main-content aside[aria-label="Akses cepat"] a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 24px 0 0;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 200ms ease;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] button:hover,
+  #main-content aside[aria-label="Akses cepat"] a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  #main-content aside[aria-label="Akses cepat"] button:focus-visible,
+  #main-content aside[aria-label="Akses cepat"] a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -3px;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] button > svg,
+  #main-content aside[aria-label="Akses cepat"] a > svg {
+    display: none;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] img {
+    position: static;
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] button::after,
+  #main-content aside[aria-label="Akses cepat"] a::after {
+    display: block;
+    width: 100%;
+    height: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] button[aria-label="Produk"]::after { content: "Produk"; }
+  #main-content aside[aria-label="Akses cepat"] a[aria-label="Promo"]::after { content: "Promo"; }
+  #main-content aside[aria-label="Akses cepat"] a[aria-label="Pengajuan"]::after { content: "Pengajuan"; }
+  #main-content aside[aria-label="Akses cepat"] a[aria-label="HaloBCA"]::after { content: "Halo BCA"; }
+
+  #main-content aside[aria-label="Akses cepat"] a[aria-label="HaloBCA"] img {
+    display: none;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] a[aria-label="HaloBCA"]::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url("/assets/quick-action/halo-bca-figma.svg") center / contain no-repeat;
+  }
+}
