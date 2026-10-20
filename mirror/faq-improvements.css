@@ -1,0 +1,89 @@
+/* FAQ presentation from the supplied Figma frame; source accordion behavior stays intact. */
+#faq-section > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 337px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 33%, transparent 100%);
+  pointer-events: none;
+}
+
+#faq-section > div:first-child > div[aria-hidden="true"] {
+  z-index: 1;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent) !important;
+}
+
+#faq-section .text-eyebrow-lg,
+#faq-section .text-eyebrow {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+#faq-section .text-eyebrow-lg {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+#faq-section .text-eyebrow {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+@media (min-width: 1280px) {
+  #faq-section .text-display {
+    width: 428px;
+    max-width: 428px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+}
+
+#faq-section button[aria-expanded] > span {
+  color: white;
+  opacity: 1;
+}
+
+#faq-section button[aria-expanded] > svg {
+  display: none;
+}
+
+#faq-section button[aria-expanded]::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  background-color: white;
+  mask: url("/assets/faq-chevron.svg") center / 24px 24px no-repeat;
+  -webkit-mask: url("/assets/faq-chevron.svg") center / 24px 24px no-repeat;
+  transition: transform 300ms ease;
+}
+
+#faq-section button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1279px) {
+  #faq-section > div:last-child > div[aria-hidden="true"] > div:last-child {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #faq-section > div:last-child > div.relative.z-10 > img:first-child {
+    filter: brightness(0.78);
+  }
+
+  #faq-section > div:last-child > div.relative.z-10 > div[aria-hidden="true"]:not(.pointer-events-none) {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #faq-section button[aria-expanded]::after {
+    transition: none;
+  }
+}
