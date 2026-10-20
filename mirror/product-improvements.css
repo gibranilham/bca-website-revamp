@@ -58,7 +58,12 @@
   }
 
   #products .bca-product-desktop .glass-panel.absolute.bottom-2.left-2 {
-    width: calc(100% - 16px) !important;
+    width: 272px !important;
+  }
+
+  #products .bca-product-desktop > button[data-blueprint-part="productCard"] > .bottom-6.right-6 {
+    bottom: 8px;
+    right: 8px;
   }
 
   #products .bca-goodplan-banner {
