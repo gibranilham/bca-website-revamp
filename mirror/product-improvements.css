@@ -1,0 +1,129 @@
+/* Product and GoodPlan presentation from Figma frame 1:4862. */
+#products .bca-original-goodplan {
+  display: none !important;
+}
+
+#products .bca-goodplan-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+@media (min-width: 1280px) {
+  #products {
+    padding-bottom: 130px;
+  }
+
+  #products .bca-product-content {
+    gap: 40px;
+  }
+
+  #products .bca-product-content > div:first-child {
+    gap: 24px;
+  }
+
+  #products .bca-product-content > div:first-child > div:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  #products .bca-product-content > div:first-child > h2 {
+    width: 733px;
+  }
+
+  #products .bca-product-desktop {
+    gap: 16px;
+  }
+
+  #products .bca-product-desktop > button[data-blueprint-part="productCard"] {
+    height: 400px;
+    flex-basis: 134px !important;
+    border-radius: 20px;
+  }
+
+  #products .bca-product-desktop > button[data-blueprint-part="productCard"].cursor-none {
+    flex-basis: 380px !important;
+  }
+
+  #products .bca-product-desktop .glass-panel.absolute.inset-x-2.bottom-2 {
+    padding: 12px !important;
+  }
+
+  #products .bca-product-desktop .glass-panel.absolute.inset-x-2.bottom-2 p {
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  #products .bca-product-desktop .glass-panel.absolute.bottom-2.left-2 {
+    width: calc(100% - 16px) !important;
+  }
+
+  #products .bca-goodplan-banner {
+    height: 94px;
+    background: #005caa url("/assets/product/goodplan-banner-figma.png") center / 100% 100% no-repeat;
+  }
+
+  #products .bca-goodplan-banner > p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  #products .bca-goodplan-banner > a {
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 70px);
+    width: 140px;
+    height: 32px;
+    border-radius: 999px;
+    color: transparent;
+    font-size: 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  #products .bca-goodplan-banner {
+    display: flex;
+    min-height: 152px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    background: linear-gradient(110deg, #003f74, #005caa 55%, #1674b8);
+    text-align: center;
+  }
+
+  #products .bca-goodplan-banner > p {
+    max-width: 340px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  #products .bca-goodplan-banner > a {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #fff;
+    padding: 5px 20px;
+    color: #005caa;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
+#products .bca-goodplan-banner > a:focus-visible {
+  outline: 3px solid #f8c534;
+  outline-offset: 3px;
+}
