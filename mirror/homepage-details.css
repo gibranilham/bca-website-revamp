@@ -3,11 +3,18 @@
   display: none !important;
 }
 
-/* The selected Individu segment stays blue in both desktop header states. */
+/* The selected Individu segment is blue while the header is transparent. */
 #main-content nav[aria-label="Navigasi utama"] a[style*="nav-segment-pill"],
 #main-content nav[aria-label="Navigasi utama"] button[aria-label="Buka menu"] > span {
   background-color: #005caa !important;
   color: #fff !important;
+}
+
+/* Once the header turns blue, invert its selected segment for contrast. */
+#main-content nav[aria-label="Navigasi utama"] > .bg-blue-500 a[style*="nav-segment-pill"],
+#main-content nav[aria-label="Navigasi utama"].bg-blue-500 button[aria-label="Buka menu"] > span {
+  background-color: #fff !important;
+  color: #005caa !important;
 }
 
 /* Match the Detail myBCA button to the width of the QR download panel. */
