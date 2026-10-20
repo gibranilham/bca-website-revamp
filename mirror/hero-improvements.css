@@ -1,0 +1,99 @@
+/* Hero composition from Figma frame 1:4709. Carousel controls and quick-access links stay live. */
+#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible:has(img[src="/assets/cycle1/hero-figma.jpg"]) .flex.w-full.items-center.justify-start.gap-4.px-1:has(.animate-scroll-cue-dot) {
+  display: none !important;
+}
+
+@media (min-width: 1280px) {
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible:has(img[src="/assets/cycle1/hero-figma.jpg"]) {
+    height: 646px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-0.bottom-0.h-full:has(> img[src="/assets/cycle1/hero-figma.jpg"]) {
+    transform: none !important;
+  }
+
+  #main-content .page-stack img[src="/assets/cycle1/hero-figma.jpg"] {
+    object-position: center top;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-y-0.left-0 {
+    width: 700px;
+    background: linear-gradient(to right, rgba(15, 15, 15, 0.82), rgba(15, 15, 15, 0.65) 33%, rgba(15, 15, 15, 0.45) 66%, transparent) !important;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.left-0.right-0.top-0 {
+    height: 200px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 {
+    top: 168px;
+    bottom: auto;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col {
+    gap: 0;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .flex.w-\[280px\].flex-col.items-start {
+    width: 608px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible h1 {
+    width: 608px;
+    max-width: 608px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .flex.items-center {
+    height: 32px;
+    margin-top: 24px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .flex.items-center .size-10 {
+    width: 32px;
+    height: 32px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .hidden.w-full.flex-col {
+    margin-top: 60px;
+    gap: 16px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .hidden.w-full.flex-col > div:first-child > a {
+    height: 154px;
+    padding: 16px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .hidden.w-full.flex-col > div:first-child > div {
+    width: 383px;
+    height: 154px;
+    padding: 16px;
+  }
+}
+
+#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
+  gap: 0;
+  border-radius: 999px;
+  background: #005caa;
+  text-decoration: none;
+}
+
+#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] > span {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] > svg {
+  display: none;
+}
+
+@media (max-width: 1279px) {
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
+    width: 232px;
+  }
+}

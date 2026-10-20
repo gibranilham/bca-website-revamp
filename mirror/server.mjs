@@ -10,8 +10,13 @@ const sourceOrigin = "https://bca-homepage-revamp.vercel.app";
 const navigationBridge = `<script>(function(){document.addEventListener("click",function(event){var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest("a[href]");if(!anchor)return;var url=new URL(anchor.href,location.href);if(url.origin!==location.origin||url.pathname==="/"||url.pathname==="/id")return;event.preventDefault();event.stopImmediatePropagation();location.assign(${JSON.stringify(sourceOrigin)}+url.pathname+url.search+url.hash)},true)})();</script>`;
 const homepage = readFileSync(sourceHtml, "utf8")
   .replaceAll("http://localhost:3000", `http://localhost:${port}`)
-  .replace("</head>", '<link rel="stylesheet" href="/faq-improvements.css"/><link rel="stylesheet" href="/news-improvements.css"/><link rel="stylesheet" href="/product-improvements.css"/><link rel="stylesheet" href="/floating-sidebar-improvements.css"/></head>')
-  .replace("</body>", `<script src="/faq-improvements.js" defer></script><script src="/news-improvements.js" defer></script><script src="/product-improvements.js" defer></script>${navigationBridge}</body>`);
+  .replaceAll("/assets/cycle1/hero-image.webp", "/assets/cycle1/hero-figma.jpg")
+  .replaceAll("Keluarga BCA", "Pasangan menggunakan layanan BCA")
+  .replaceAll("Capai Kebebasan Finansial Lebih Dini bersama BCA", "Wujudkan Impian Masa Depan dengan Tabungan BCA")
+  .replace('>Download myBCA</span>', '>Pelajari Tabungan BCA</span>')
+  .replace(String.raw`\"cta\":{\"label\":\"Download myBCA\"`, String.raw`\"cta\":{\"label\":\"Pelajari Tabungan BCA\"`)
+  .replace("</head>", '<link rel="stylesheet" href="/faq-improvements.css"/><link rel="stylesheet" href="/news-improvements.css"/><link rel="stylesheet" href="/product-improvements.css"/><link rel="stylesheet" href="/floating-sidebar-improvements.css"/><link rel="stylesheet" href="/hero-improvements.css"/></head>')
+  .replace("</body>", `<script src="/faq-improvements.js" defer></script><script src="/news-improvements.js" defer></script><script src="/product-improvements.js" defer></script><script src="/hero-improvements.js" defer></script>${navigationBridge}</body>`);
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -60,7 +65,7 @@ createServer((req, res) => {
   if (["/favicon.ico", "/icon.svg", "/apple-icon.png", "/manifest.webmanifest", "/opengraph-bcacoid.png", "/web-app-192.png", "/web-app-512.png", "/maskable-192.png", "/maskable-512.png"].includes(pathname)) {
     return serve(res, resolve(root, "public", "." + pathname));
   }
-  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/floating-sidebar-improvements.css"].includes(pathname)) {
+  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/floating-sidebar-improvements.css", "/hero-improvements.css", "/hero-improvements.js"].includes(pathname)) {
     return serve(res, resolve(root, "mirror", "." + pathname));
   }
   if (pathname.startsWith("/_next/static/")) {
