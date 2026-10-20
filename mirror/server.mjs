@@ -23,8 +23,8 @@ const homepage = readFileSync(sourceHtml, "utf8")
   .replaceAll("Capai Kebebasan Finansial Lebih Dini bersama BCA", "Wujudkan Impian Masa Depan dengan Tabungan BCA")
   .replace('>Download myBCA</span>', '>Pelajari Tabungan BCA</span>')
   .replace(String.raw`\"cta\":{\"label\":\"Download myBCA\"`, String.raw`\"cta\":{\"label\":\"Pelajari Tabungan BCA\"`)
-  .replace("</head>", '<link rel="stylesheet" href="/faq-improvements.css"/><link rel="stylesheet" href="/news-improvements.css"/><link rel="stylesheet" href="/product-improvements.css"/><link rel="stylesheet" href="/floating-sidebar-improvements.css"/><link rel="stylesheet" href="/hero-improvements.css"/><link rel="stylesheet" href="/homepage-details.css"/></head>')
-  .replace("</body>", `<script src="/faq-improvements.js" defer></script><script src="/news-improvements.js" defer></script><script src="/product-improvements.js" defer></script><script src="/hero-improvements.js" defer></script>${navigationBridge}</body>`);
+  .replace("</head>", '<link rel="stylesheet" href="/faq-improvements.css"/><link rel="stylesheet" href="/news-improvements.css"/><link rel="stylesheet" href="/product-improvements.css"/><link rel="stylesheet" href="/soliprio-improvements.css"/><link rel="stylesheet" href="/floating-sidebar-improvements.css"/><link rel="stylesheet" href="/hero-improvements.css"/><link rel="stylesheet" href="/homepage-details.css"/></head>')
+  .replace("</body>", `<script src="/faq-improvements.js" defer></script><script src="/news-improvements.js" defer></script><script src="/product-improvements.js" defer></script><script src="/soliprio-improvements.js" defer></script><script src="/hero-improvements.js" defer></script>${navigationBridge}</body>`);
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -73,7 +73,7 @@ createServer((req, res) => {
   if (["/favicon.ico", "/icon.svg", "/apple-icon.png", "/manifest.webmanifest", "/opengraph-bcacoid.png", "/web-app-192.png", "/web-app-512.png", "/maskable-192.png", "/maskable-512.png"].includes(pathname)) {
     return serve(res, resolve(root, "public", "." + pathname));
   }
-  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/floating-sidebar-improvements.css", "/hero-improvements.css", "/hero-improvements.js", "/homepage-details.css"].includes(pathname)) {
+  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/soliprio-improvements.css", "/soliprio-improvements.js", "/floating-sidebar-improvements.css", "/hero-improvements.css", "/hero-improvements.js", "/homepage-details.css"].includes(pathname)) {
     return serve(res, resolve(root, "mirror", "." + pathname));
   }
   if (pathname.startsWith("/_next/static/")) {
