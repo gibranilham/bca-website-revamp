@@ -11,43 +11,32 @@
   ]);
 
   const start = () => {
-    const section = document.getElementById("products");
-    if (!section) return;
+    const reconcile = () => {
+      const section = document.getElementById("products");
+      const content = section?.querySelector(":scope > .relative.z-10");
+      if (!section || !content) return;
 
-    const content = [...section.children].find((child) =>
-      child.classList.contains("relative") && child.classList.contains("z-10"),
-    );
-    if (!content) return;
-    content.classList.add("bca-product-content");
-
-    const desktopCard = section.querySelector('button[data-blueprint-part="productCard"]');
-    desktopCard?.parentElement?.classList.add("bca-product-desktop");
-
-    const originalLink = [...content.querySelectorAll("a")].find((link) =>
-      link.getAttribute("href")?.includes("/goodplan-bca"),
-    );
-    if (originalLink) {
-      const originalBlock = [...content.children].find((child) => child.contains(originalLink));
-      originalBlock?.classList.add("bca-original-goodplan");
-      const followingBlock = originalBlock?.nextElementSibling;
-      if (followingBlock?.textContent?.includes("GoodPlan")) {
-        followingBlock.classList.add("bca-original-goodplan");
+      const originalLink = content.querySelector(':scope > div > a[href*="/goodplan-bca"]');
+      if (originalLink) {
+        const banners = content.querySelectorAll(":scope > .bca-goodplan-banner");
+        let banner = banners[0];
+        if (!banner) {
+          banner = document.createElement("div");
+          banner.className = "bca-goodplan-banner";
+          const title = document.createElement("p");
+          title.textContent = "Wujudkan Rencanamu bersama Goodplan BCA";
+          const link = document.createElement("a");
+          link.textContent = "GoodPlan BCA";
+          banner.append(title, link);
+          content.append(banner);
+        }
+        const link = banner.querySelector("a");
+        link.href = originalLink.href;
+        link.target = originalLink.target;
+        link.rel = originalLink.rel;
+        for (const duplicate of [...banners].slice(1)) duplicate.remove();
       }
 
-      const banner = document.createElement("div");
-      banner.className = "bca-goodplan-banner";
-      const title = document.createElement("p");
-      title.textContent = "Wujudkan Rencanamu bersama Goodplan BCA";
-      const link = document.createElement("a");
-      link.href = originalLink.href;
-      link.target = originalLink.target;
-      link.rel = originalLink.rel;
-      link.textContent = "GoodPlan BCA";
-      banner.append(title, link);
-      content.append(banner);
-    }
-
-    const updateImages = () => {
       for (const image of section.querySelectorAll("img[src]")) {
         const replacement = replacements.get(image.getAttribute("src")?.trim());
         if (replacement) image.setAttribute("src", replacement);
@@ -55,16 +44,22 @@
     };
 
     let scheduled = false;
-    const observer = new MutationObserver(() => {
-      if (scheduled) return;
+    const observer = new MutationObserver((mutations) => {
+      const relevant = mutations.some((mutation) => {
+        if (mutation.target instanceof Element && mutation.target.closest("#products")) return true;
+        return [...mutation.addedNodes, ...mutation.removedNodes].some((node) =>
+          node instanceof Element && (node.id === "products" || node.querySelector("#products")),
+        );
+      });
+      if (!relevant || scheduled) return;
       scheduled = true;
       requestAnimationFrame(() => {
         scheduled = false;
-        updateImages();
+        reconcile();
       });
     });
-    observer.observe(section, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
-    updateImages();
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
+    reconcile();
   };
 
   if (document.readyState === "complete") start();

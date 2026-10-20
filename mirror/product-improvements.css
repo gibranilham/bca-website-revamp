@@ -1,5 +1,6 @@
 /* Product and GoodPlan presentation from Figma frame 1:4862. */
-#products .bca-original-goodplan {
+#products > .relative.z-10 > div:not(.bca-goodplan-banner):has(> a[href*="/goodplan-bca"]),
+#products > .relative.z-10 > div:has(> a[href="/kartu-kredit"]) {
   display: none !important;
 }
 
@@ -16,52 +17,52 @@
     padding-bottom: 130px;
   }
 
-  #products .bca-product-content {
+  #products > .relative.z-10 {
     gap: 40px;
   }
 
-  #products .bca-product-content > div:first-child {
+  #products > .relative.z-10 > div:first-child {
     gap: 24px;
   }
 
-  #products .bca-product-content > div:first-child > div:first-child {
+  #products > .relative.z-10 > div:first-child > div:first-child {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  #products .bca-product-content > div:first-child > h2 {
+  #products > .relative.z-10 > div:first-child > h2 {
     width: 733px;
   }
 
-  #products .bca-product-desktop {
+  #products .hidden.gap-3:has(> button[data-blueprint-part="productCard"]) {
     gap: 16px;
   }
 
-  #products .bca-product-desktop > button[data-blueprint-part="productCard"] {
+  #products .hidden.gap-3 > button[data-blueprint-part="productCard"] {
     height: 400px;
     flex-basis: 134px !important;
     border-radius: 20px;
   }
 
-  #products .bca-product-desktop > button[data-blueprint-part="productCard"].cursor-none {
+  #products .hidden.gap-3 > button[data-blueprint-part="productCard"].cursor-none {
     flex-basis: 380px !important;
   }
 
-  #products .bca-product-desktop .glass-panel.absolute.inset-x-2.bottom-2 {
+  #products .hidden.gap-3 .glass-panel.absolute.inset-x-2.bottom-2 {
     padding: 12px !important;
   }
 
-  #products .bca-product-desktop .glass-panel.absolute.inset-x-2.bottom-2 p {
+  #products .hidden.gap-3 .glass-panel.absolute.inset-x-2.bottom-2 p {
     white-space: nowrap;
     font-size: 16px;
     line-height: 28px;
   }
 
-  #products .bca-product-desktop .glass-panel.absolute.bottom-2.left-2 {
+  #products .hidden.gap-3 .glass-panel.absolute.bottom-2.left-2 {
     width: 272px !important;
   }
 
-  #products .bca-product-desktop > button[data-blueprint-part="productCard"] > .bottom-6.right-6 {
+  #products .hidden.gap-3 > button[data-blueprint-part="productCard"] > .bottom-6.right-6 {
     bottom: 8px;
     right: 8px;
   }
