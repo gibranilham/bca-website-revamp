@@ -1,0 +1,9 @@
+FROM node:24-alpine
+
+WORKDIR /app
+ENV NODE_ENV=development
+ENV PORT=3000
+ENV BCA_CLONE_HOST=0.0.0.0
+
+EXPOSE 3000
+CMD ["node", "mirror/server.mjs"]

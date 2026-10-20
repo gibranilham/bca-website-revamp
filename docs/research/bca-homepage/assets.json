@@ -1,0 +1,540 @@
+[
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/_next/static/media/2e18f768700a8974-s.p.woff2",
+    "local": "/_next/static/media/2e18f768700a8974-s.p.woff2",
+    "size": 20464,
+    "type": "font/woff2"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/_next/static/media/4b0d78f3c8beaeef-s.p.woff2",
+    "local": "/_next/static/media/4b0d78f3c8beaeef-s.p.woff2",
+    "size": 20668,
+    "type": "font/woff2"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/_next/static/media/701489a259dc009e-s.p.woff2",
+    "local": "/_next/static/media/701489a259dc009e-s.p.woff2",
+    "size": 20204,
+    "type": "font/woff2"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/asuransi.webp",
+    "local": "/assets/category/asuransi.webp",
+    "size": 118870,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/ebanking.webp",
+    "local": "/assets/category/ebanking.webp",
+    "size": 90040,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/investasi.webp",
+    "local": "/assets/category/investasi.webp",
+    "size": 95638,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/kartu-kredit.webp",
+    "local": "/assets/category/kartu-kredit.webp",
+    "size": 122840,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/pinjaman.webp",
+    "local": "/assets/category/pinjaman.webp",
+    "size": 95494,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/category/tabungan.webp",
+    "local": "/assets/category/tabungan.webp",
+    "size": 73494,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/bca-logo.svg",
+    "local": "/assets/cycle1/bca-logo.svg",
+    "size": 8312,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/hero-banner-jrf.webp",
+    "local": "/assets/cycle1/hero-banner-jrf.webp",
+    "size": 16620,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/hero-banner.webp",
+    "local": "/assets/cycle1/hero-banner.webp",
+    "size": 27574,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/hero-image.webp",
+    "local": "/assets/cycle1/hero-image.webp",
+    "size": 194008,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/outline-menu.svg",
+    "local": "/assets/cycle1/outline-menu.svg",
+    "size": 803,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/outline-search-1.svg",
+    "local": "/assets/cycle1/outline-search-1.svg",
+    "size": 1474,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/cycle1/outline-search.svg",
+    "local": "/assets/cycle1/outline-search.svg",
+    "size": 1486,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/faq-bg.webp",
+    "local": "/assets/faq-bg.webp",
+    "size": 856910,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/fb.svg",
+    "local": "/assets/footer/fb.svg",
+    "size": 713,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/footer-clove-pattern.svg",
+    "local": "/assets/footer/footer-clove-pattern.svg",
+    "size": 6109,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/ig.svg",
+    "local": "/assets/footer/ig.svg",
+    "size": 3158,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/outline-envelope.svg",
+    "local": "/assets/footer/outline-envelope.svg",
+    "size": 1056,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/outline-phone.svg",
+    "local": "/assets/footer/outline-phone.svg",
+    "size": 2628,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/outline-whatsapp.svg",
+    "local": "/assets/footer/outline-whatsapp.svg",
+    "size": 1364,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/x.svg",
+    "local": "/assets/footer/x.svg",
+    "size": 538,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/footer/ytube.svg",
+    "local": "/assets/footer/ytube.svg",
+    "size": 1093,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/lokasi/icon-locate.svg",
+    "local": "/assets/lokasi/icon-locate.svg",
+    "size": 1035,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/lokasi/icon-located.svg",
+    "local": "/assets/lokasi/icon-located.svg",
+    "size": 695,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/lokasi/icon-search.svg",
+    "local": "/assets/lokasi/icon-search.svg",
+    "size": 1327,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/asuransi.svg",
+    "local": "/assets/megamenu/asuransi.svg",
+    "size": 4297,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/e-banking.svg",
+    "local": "/assets/megamenu/e-banking.svg",
+    "size": 8484,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/investasi.svg",
+    "local": "/assets/megamenu/investasi.svg",
+    "size": 3396,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/kartu-kredit.svg",
+    "local": "/assets/megamenu/kartu-kredit.svg",
+    "size": 10747,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/pinjaman.svg",
+    "local": "/assets/megamenu/pinjaman.svg",
+    "size": 7278,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/tabungan.svg",
+    "local": "/assets/megamenu/tabungan.svg",
+    "size": 3419,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/megamenu/transaksi.svg",
+    "local": "/assets/megamenu/transaksi.svg",
+    "size": 6169,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/mybca/bg.webp",
+    "local": "/assets/mybca/bg.webp",
+    "size": 142346,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/mybca/phone-woman-mobile.webp",
+    "local": "/assets/mybca/phone-woman-mobile.webp",
+    "size": 82288,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/mybca/phone-woman.webp",
+    "local": "/assets/mybca/phone-woman.webp",
+    "size": 91858,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/navbar/bca-logo-blue.svg",
+    "local": "/assets/navbar/bca-logo-blue.svg",
+    "size": 8081,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/navbar/icon-arrow-blue.svg",
+    "local": "/assets/navbar/icon-arrow-blue.svg",
+    "size": 677,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/navbar/icon-arrow-diag-blue.svg",
+    "local": "/assets/navbar/icon-arrow-diag-blue.svg",
+    "size": 658,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/navbar/icon-arrow-white.svg",
+    "local": "/assets/navbar/icon-arrow-white.svg",
+    "size": 656,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/banner-news-1.webp",
+    "local": "/assets/news/banner-news-1.webp",
+    "size": 14334,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/banner-news-2.webp",
+    "local": "/assets/news/banner-news-2.webp",
+    "size": 5520,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/banner-news-3.webp",
+    "local": "/assets/news/banner-news-3.webp",
+    "size": 4482,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/banner-news-4.webp",
+    "local": "/assets/news/banner-news-4.webp",
+    "size": 8698,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/icon-arrow-diagonal.svg",
+    "local": "/assets/news/icon-arrow-diagonal.svg",
+    "size": 657,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/news/news-clove-pattern.svg",
+    "local": "/assets/news/news-clove-pattern.svg",
+    "size": 3208,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/banking/refresh.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/button-icon-placeholder.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/detail/molton-brown/chevron-right.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/detail/molton-brown/chevron-up.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/kurs/flags/Flag=indonesia.svg",
+    "local": "/assets/prioritas/kurs/flags/Flag=indonesia.svg",
+    "size": 519,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/kurs/flags/Flag=united%20states.svg",
+    "local": "/assets/prioritas/kurs/flags/Flag=united states.svg",
+    "size": 2237,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/member-overview/account-user.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/privilege/event.webp",
+    "local": "/assets/prioritas/privilege/event.webp",
+    "size": 376568,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/prioritas/privilege/lounge.webp",
+    "local": "/assets/prioritas/privilege/lounge.webp",
+    "size": 226168,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/product/bg-clove-a.svg",
+    "local": "/assets/product/bg-clove-a.svg",
+    "size": 3520,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/product/bg-clove-b.svg",
+    "local": "/assets/product/bg-clove-b.svg",
+    "size": 3405,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/promo/event-banner-1.webp",
+    "local": "/assets/promo/event-banner-1.webp",
+    "size": 21696,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/promo/event-banner-2.webp",
+    "local": "/assets/promo/event-banner-2.webp",
+    "size": 33398,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/promo/event-banner-3.webp",
+    "local": "/assets/promo/event-banner-3.webp",
+    "size": 73556,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/promo/icon-clock.svg",
+    "local": "/assets/promo/icon-clock.svg",
+    "size": 972,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/promo/showmore-icons.webp",
+    "local": "/assets/promo/showmore-icons.webp",
+    "size": 4832,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/arrow-right.svg",
+    "local": "/assets/quick-action/arrow-right.svg",
+    "size": 556,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/discount-shape.svg",
+    "local": "/assets/quick-action/discount-shape.svg",
+    "size": 3427,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/document.svg",
+    "local": "/assets/quick-action/document.svg",
+    "size": 1928,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/location.svg",
+    "local": "/assets/quick-action/location.svg",
+    "size": 1520,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/message-question.svg",
+    "local": "/assets/quick-action/message-question.svg",
+    "size": 2187,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/mybca-bisnis-logo.svg",
+    "local": "/assets/quick-action/mybca-bisnis-logo.svg",
+    "size": 15739,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/mybca-logo.svg",
+    "local": "/assets/quick-action/mybca-logo.svg",
+    "size": 2941,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/quick-action/product.svg",
+    "local": "/assets/quick-action/product.svg",
+    "size": 2787,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/soliprio/prioritas-image.webp",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/soliprio/prioritas-logo.svg",
+    "error": "HTTP Error 308: Permanent Redirect"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/soliprio/soliprio-pattern.svg",
+    "local": "/assets/soliprio/soliprio-pattern.svg",
+    "size": 3928,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/soliprio/solitaire-image.webp",
+    "local": "/assets/soliprio/solitaire-image.webp",
+    "size": 84904,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/soliprio/solitaire-logo.svg",
+    "local": "/assets/soliprio/solitaire-logo.svg",
+    "size": 15082,
+    "type": "image/svg+xml"
+  },
+  {
+    "url": "https://bca-homepage-revamp.vercel.app/assets/solitaire/privilege/health-source.webp",
+    "local": "/assets/solitaire/privilege/health-source.webp",
+    "size": 300978,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_Emilia-Cafe-Birthday-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_Emilia-Cafe-Birthday-banner.webp",
+    "size": 76142,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_Firepot-Malang-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_Firepot-Malang-banner.webp",
+    "size": 125638,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_bakmi-gm-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_bakmi-gm-banner.webp",
+    "size": 73074,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_fukumaru-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_fukumaru-banner.webp",
+    "size": 91200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_grand-outlet-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_grand-outlet-banner.webp",
+    "size": 38360,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_hummingbird-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_hummingbird-banner.webp",
+    "size": 80552,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_vasa-banner.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageCover/20260918_vasa-banner.webp",
+    "size": 117448,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_Emilia-Cafe-Birthday-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_Emilia-Cafe-Birthday-logo.webp",
+    "size": 13308,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_Firepot-Malang-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_Firepot-Malang-logo.webp",
+    "size": 2632,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_bakmi-gm-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_bakmi-gm-logo.webp",
+    "size": 5636,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_fukumaru-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_fukumaru-logo.webp",
+    "size": 4548,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_grand-outlet-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_grand-outlet-logo.webp",
+    "size": 2810,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_hummingbird-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_hummingbird-logo.webp",
+    "size": 7072,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_vasa-logo.webp",
+    "local": "/assets/external/pustaka.bca.co.id/Promo/A2C31A68-BC10-4CBD-AB51-85474A36CC50/Detail/ImageThumbnail/20260918_vasa-logo.webp",
+    "size": 2600,
+    "type": "image/webp"
+  }
+]
