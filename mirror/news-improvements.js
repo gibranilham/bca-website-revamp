@@ -3,6 +3,11 @@
   const start = () => {
     const section = document.getElementById("news-section");
     if (!section) return;
+    const content = section.querySelector(":scope > .relative.z-10");
+    content?.classList.add("bca-news-content");
+    content?.children[0]?.classList.add("bca-news-heading");
+    content?.children[1]?.classList.add("bca-news-tabs");
+    content?.children[2]?.classList.add("bca-news-stories");
 
     const grid = [...section.querySelectorAll("div")].find((element) =>
       element.classList.contains("xl:grid-cols-3"),
@@ -11,11 +16,50 @@
 
     const wrap = grid.parentElement;
     wrap.classList.add("bca-news-grid-wrap");
+    const sourceMobileRail = wrap.querySelector(".snap-x");
+    const mobileRail = document.createElement("div");
+    mobileRail.className = "bca-news-mobile-rail";
+    mobileRail.setAttribute("aria-label", "Artikel kabar dan wawasan");
+    sourceMobileRail?.after(mobileRail);
     const left = document.createElement("div");
     left.className = "bca-news-left";
     grid.after(left);
 
     let lastCards = "";
+    const makeMobileCard = (anchor) => {
+      const card = document.createElement("a");
+      card.className = "bca-news-mobile-card";
+      card.href = anchor.href;
+      card.target = anchor.target;
+      card.rel = anchor.rel;
+
+      const image = document.createElement("img");
+      image.src = anchor.querySelector("img")?.getAttribute("src") || "";
+      image.alt = "";
+      image.loading = "lazy";
+      card.append(image);
+
+      const content = document.createElement("span");
+      content.className = "bca-news-mobile-content";
+      const title = document.createElement("span");
+      title.className = "bca-news-mobile-title";
+      title.textContent = anchor.querySelector("p[title]")?.textContent || anchor.querySelector(".glass-panel p")?.textContent || "";
+      content.append(title);
+
+      const metadata = document.createElement("span");
+      metadata.className = "bca-news-mobile-meta";
+      const parts = anchor.querySelectorAll(".glass-panel .flex p, .flex.items-center.gap-3 p");
+      if (parts.length >= 2) {
+        for (const part of [parts[0], parts[1]]) {
+          const item = document.createElement("span");
+          item.textContent = part.textContent;
+          metadata.append(item);
+        }
+      }
+      content.append(metadata);
+      card.append(content);
+      return card;
+    };
     const update = () => {
       const selected = section.querySelector('button[aria-pressed="true"]');
       const tabName = selected?.textContent?.trim();
@@ -60,6 +104,15 @@
         card.removeAttribute("style");
       }
       left.replaceChildren(lead, next, third);
+      const allMobileCards = [featured, ...cards].map(makeMobileCard);
+      const mobileColumns = [];
+      for (let index = 0; index < allMobileCards.length; index += 3) {
+        const column = document.createElement("div");
+        column.className = "bca-news-mobile-column";
+        column.append(...allMobileCards.slice(index, index + 3));
+        mobileColumns.push(column);
+      }
+      mobileRail.replaceChildren(...mobileColumns);
       lastCards = signature;
     };
 
@@ -76,6 +129,19 @@
     update();
   };
 
-  if (document.readyState === "complete") start();
-  else window.addEventListener("load", start, { once: true });
+  let activeGrid;
+  let queued = false;
+  const ensureStarted = () => {
+    queued = false;
+    const grid = document.querySelector('#news-section .xl\\:grid-cols-3');
+    if (!grid || (grid === activeGrid && grid.parentElement?.querySelector('.bca-news-mobile-rail'))) return;
+    activeGrid = grid;
+    start();
+  };
+  new MutationObserver(() => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(ensureStarted);
+  }).observe(document.documentElement, { childList: true, subtree: true });
+  ensureStarted();
 })();
