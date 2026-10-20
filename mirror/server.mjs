@@ -7,6 +7,14 @@ const sourceHtml = resolve(root, "docs/research/bca-homepage/source.html");
 const port = Number(process.env.PORT || 3001);
 const host = process.env.BCA_CLONE_HOST || "127.0.0.1";
 const sourceOrigin = "https://bca-homepage-revamp.vercel.app";
+const sectionNavigationChunk = "/_next/static/chunks/3608-304218102e3a085a.js";
+const originalSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:1})";
+const easedSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:1.6,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2})";
+const sectionNavigationScript = readFileSync(resolve(root, "mirror", "." + sectionNavigationChunk), "utf8");
+if (!sectionNavigationScript.includes(originalSectionScroll)) {
+  throw new Error("Section navigation scroll handler was not found in the mirrored runtime");
+}
+const adjustedSectionNavigationScript = sectionNavigationScript.replace(originalSectionScroll, easedSectionScroll);
 const navigationBridge = `<script>(function(){document.addEventListener("click",function(event){var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest("a[href]");if(!anchor)return;var url=new URL(anchor.href,location.href);if(url.origin!==location.origin||url.pathname==="/"||url.pathname==="/id")return;event.preventDefault();event.stopImmediatePropagation();location.assign(${JSON.stringify(sourceOrigin)}+url.pathname+url.search+url.hash)},true)})();</script>`;
 const homepage = readFileSync(sourceHtml, "utf8")
   .replaceAll("http://localhost:3000", `http://localhost:${port}`)
@@ -69,6 +77,13 @@ createServer((req, res) => {
     return serve(res, resolve(root, "mirror", "." + pathname));
   }
   if (pathname.startsWith("/_next/static/")) {
+    if (pathname === sectionNavigationChunk) {
+      return res.writeHead(200, {
+        "Content-Type": types[".js"],
+        "Content-Length": Buffer.byteLength(adjustedSectionNavigationScript),
+        "Cache-Control": "no-cache",
+      }).end(adjustedSectionNavigationScript);
+    }
     const path = resolve(root, "mirror", "." + pathname);
     if (path.startsWith(resolve(root, "mirror") + sep)) return serve(res, path, sourceOrigin + (req.url || pathname));
   }
