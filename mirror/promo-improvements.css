@@ -179,6 +179,15 @@
   }
 }
 
+/* Below the 392px Figma frame, the side peeks become narrow slivers.
+   Show one complete event banner while keeping swipe and pagination active. */
+@media (max-width: 391px) {
+  #promo [class*="--idle-w"] > div:not(:nth-child(3)) {
+    visibility: hidden;
+    opacity: 0 !important;
+  }
+}
+
 @media (max-width: 359px) {
   #promo > div > div > div:first-child h2 {
     font-size: 18px;
