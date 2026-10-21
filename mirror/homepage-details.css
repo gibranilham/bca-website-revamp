@@ -3,22 +3,52 @@
   display: none !important;
 }
 
-/* The selected Individu segment is blue while the header is transparent. */
-#main-content nav[aria-label="Navigasi utama"] a[style*="nav-segment-pill"],
-#main-content nav[aria-label="Navigasi utama"] button[aria-label="Buka menu"] > span {
+/* Keep the desktop Individu segment selected over the transparent header. */
+#main-content nav[aria-label="Navigasi utama"] a[style*="nav-segment-pill"] {
   background-color: #005caa !important;
   color: #fff !important;
 }
 
 /* Once the header turns blue, invert its selected segment for contrast. */
-#main-content nav[aria-label="Navigasi utama"] > .bg-blue-500 a[style*="nav-segment-pill"],
-#main-content nav[aria-label="Navigasi utama"].bg-blue-500 button[aria-label="Buka menu"] > span {
+#main-content nav[aria-label="Navigasi utama"] > .bg-blue-500 a[style*="nav-segment-pill"] {
   background-color: #fff !important;
   color: #005caa !important;
 }
 
-/* The mobile section tabs scroll horizontally without chevron overlays (Figma 1:2980). */
+/* Figma 1:2889 — compact transparent mobile navigation. */
 @media (max-width: 1279px) {
+  #main-content nav[aria-label="Navigasi utama"].xl\:hidden {
+    height: 56px;
+    padding: 8px 16px;
+  }
+
+  #main-content nav[aria-label="Navigasi utama"].xl\:hidden a[aria-label="BCA"] img {
+    width: 77px;
+    height: 24px;
+  }
+
+  #main-content nav[aria-label="Navigasi utama"].xl\:hidden button[aria-label$="menu"] {
+    box-sizing: border-box;
+    width: 112px;
+    height: 40px;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  #main-content nav[aria-label="Navigasi utama"].xl\:hidden button[aria-label$="menu"] > span {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: transparent !important;
+    color: #fff !important;
+  }
+
+  #main-content nav[aria-label="Navigasi bagian halaman"].top-16 {
+    top: 56px;
+  }
+
+  /* The mobile section tabs scroll horizontally without chevron overlays (Figma 1:2980). */
   #main-content nav[aria-label="Navigasi bagian halaman"] > div:has(> button[aria-label^="Geser navigasi"]) {
     display: none;
   }
