@@ -25,3 +25,113 @@
     justify-content: center;
   }
 }
+
+/* Figma 1:3030 — myBCA mobile section at 392 × 376. */
+@media (max-width: 440px) {
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child {
+    position: relative;
+    height: calc(100vw * 376 / 392);
+    background: url("/assets/mybca/mobile-figma-bg.png") center / 100% 100% no-repeat;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child > div[aria-hidden="true"] {
+    display: none;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child > div:last-child {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child > div:last-child > div:first-child {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    aspect-ratio: auto;
+    background: url("/assets/mybca/mobile-figma-foreground.png") center top 2.13% / 70.41% auto no-repeat;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child > div:last-child > div:first-child img {
+    opacity: 0;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child > div:last-child > div:last-child {
+    position: absolute;
+    right: 3.06%;
+    bottom: 0;
+    left: 3.06%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel {
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    padding: 16px;
+    border: 1px solid rgb(255 255 255 / 45%);
+    border-bottom: 0;
+    border-radius: 24px 24px 0 0;
+    background: linear-gradient(180deg, rgb(18 20 23 / 10%), rgb(18 20 23 / 60%)) !important;
+    box-shadow: -8px 0 16px rgb(0 0 0 / 25%);
+    backdrop-filter: blur(28px) !important;
+    text-align: left;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel > div:first-child {
+    width: 100%;
+    max-width: none;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel p {
+    width: min(286px, 100%);
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    text-align: left;
+    text-shadow: none;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel > div:last-child {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel > div:last-child a {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border-radius: 999px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel > div:last-child a:first-child {
+    background: #005caa;
+  }
+
+  #main-content section:has(img[src$="/mybca/phone-woman-mobile.webp"]) > div:last-child .glass-panel > div:last-child a span {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
