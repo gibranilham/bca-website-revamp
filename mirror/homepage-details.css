@@ -17,6 +17,13 @@
   color: #005caa !important;
 }
 
+/* The mobile section tabs scroll horizontally without chevron overlays (Figma 1:2980). */
+@media (max-width: 1279px) {
+  #main-content nav[aria-label="Navigasi bagian halaman"] > div:has(> button[aria-label^="Geser navigasi"]) {
+    display: none;
+  }
+}
+
 /* Match the Detail myBCA button to the width of the QR download panel. */
 @media (min-width: 1280px) {
   #main-content .glass-panel > a.btn-base[href*="/e-banking/myBCA"] {
