@@ -72,14 +72,17 @@
 
 #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
   gap: 0;
+  width: fit-content;
+  height: 40px;
+  padding-inline: 20px;
   border-radius: 999px;
   background: #005caa;
   text-decoration: none;
 }
 
 #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] > span {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--text-label-m-semibold, 14px);
+  line-height: 20px;
 }
 
 #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] > svg {
@@ -149,11 +152,6 @@
     max-width: none;
   }
 
-  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
-    width: 208px;
-    height: 48px;
-  }
-
   #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .flex.items-center {
     margin-top: 19px;
   }
@@ -172,11 +170,5 @@
     width: min(326px, calc(100vw * 326 / 392));
     min-width: min(326px, calc(100vw * 326 / 392));
     height: 130px;
-  }
-}
-
-@media (min-width: 1280px) {
-  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
-    width: 232px;
   }
 }
