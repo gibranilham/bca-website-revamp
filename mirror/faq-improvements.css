@@ -83,7 +83,7 @@
 
   /* Mobile FAQ composition from Figma frame 1:3370 (392 x 531). */
   #faq-section > div:last-child {
-    background: #111418 url("/assets/faq-mobile-figma.jpg") left top / 459px 867px no-repeat;
+    background: #111418 url("/assets/faq-mobile-figma.jpg") center top / cover no-repeat;
   }
 
   #faq-section > div:last-child::before {

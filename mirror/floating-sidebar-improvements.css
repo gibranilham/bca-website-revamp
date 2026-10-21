@@ -14,6 +14,27 @@
     flex: 0 0 25%;
   }
 
+  #main-content nav[aria-label="Akses cepat"] > button:first-child {
+    background-color: transparent !important;
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > button:first-child img {
+    display: none;
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > button:first-child::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("/assets/quick-action/product.svg") center / contain no-repeat;
+  }
+
+  #main-content:has([role="dialog"][aria-label="Produk"].opacity-100)
+    nav[aria-label="Akses cepat"] > button:first-child::before {
+    background-image: url("/assets/quick-action/product-fill-figma.svg");
+  }
+
   #main-content nav[aria-label="Akses cepat"] > :nth-child(4) img {
     display: none;
   }
