@@ -4,6 +4,8 @@
   #main-content nav[aria-label="Akses cepat"] {
     height: calc(74px + env(safe-area-inset-bottom));
     transform: none !important;
+    translate: 0 0 !important;
+    transition: none !important;
   }
 
   #main-content nav[aria-label="Akses cepat"] > :last-child {
