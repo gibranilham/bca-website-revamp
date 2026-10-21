@@ -1,0 +1,172 @@
+/* Mobile Promo and Event sizing follows the 392px Figma frame (1:3045). */
+@media (max-width: 1279px) {
+  #promo {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    background: #f4f8fc;
+  }
+
+  #promo > div > div {
+    gap: 24px;
+  }
+
+  #promo > div > div > div:first-child {
+    gap: 12px;
+  }
+
+  #promo > div > div > div:first-child > div:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  #promo > div > div > div:first-child > div:first-child p {
+    text-transform: none;
+  }
+
+  #promo > div > div:first-child > div:first-child a[aria-label^="Lihat"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  #promo > div > div > div:first-child h2 {
+    width: auto;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  #promo > div > div:first-child .snap-x {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  #promo > div > div:first-child .snap-x > div {
+    margin-right: 20px !important;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] {
+    width: 231px;
+    height: 293px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child,
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:nth-child(2) {
+    border-radius: 20px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child > div:first-child {
+    height: 132px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] [data-blueprint-part="logo"] {
+    width: 40px;
+    height: 40px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:last-child {
+    left: 12px;
+    top: 105px;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] [data-blueprint-part="brand"] {
+    order: -1;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] [data-blueprint-part="cardTitle"] {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child > div:nth-child(2) > div:first-child {
+    left: 12px;
+    right: 12px;
+    top: 37px;
+    gap: 6px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child > div:nth-child(2) > div:last-child {
+    left: 12px;
+    bottom: 16px;
+    gap: 4px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child > div:nth-child(2) > div:last-child > span:first-child {
+    width: 16px;
+    height: 16px;
+  }
+
+  #promo > div > div:first-child .snap-x a[href^="/promo/"] > div:first-child > div:nth-child(2) > div:last-child > span:last-child {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  #promo [class*="--idle-w"] {
+    height: 138px;
+    --gap: 12px;
+    --idle-w: min(320px, calc(100% - 32px));
+    --pad: max(16px, calc((100% - 320px) / 2));
+  }
+
+  #promo [class*="--idle-w"] > div {
+    height: 138px;
+    width: min(320px, calc(100% - 32px));
+    border: 0;
+    border-radius: 12px;
+  }
+
+  #promo [class*="--idle-w"] > div:nth-child(3) {
+    width: calc(100% - 2 * var(--pad)) !important;
+  }
+
+  #promo [class*="--idle-w"] > div:nth-child(2),
+  #promo [class*="--idle-w"] > div:nth-child(4) {
+    opacity: 1;
+  }
+
+  #promo div:has(> div > button[aria-label^="Slide"]) {
+    margin-top: 20px;
+  }
+
+  #promo div:has(> button[aria-label^="Slide"]) {
+    gap: 6px;
+  }
+
+  #promo button[aria-label^="Slide"] span {
+    background: #b2d1ea;
+  }
+
+  #promo button[aria-label="Jeda carousel"],
+  #promo button[aria-label="Lanjutkan carousel"] {
+    width: 40px;
+  }
+
+  #promo button[aria-label="Jeda carousel"] svg,
+  #promo button[aria-label="Lanjutkan carousel"] svg {
+    width: 40px;
+  }
+
+  #promo button[aria-label="Jeda carousel"] svg line:first-child,
+  #promo button[aria-label="Lanjutkan carousel"] svg line:first-child {
+    stroke: #b2d1ea;
+  }
+
+  #promo button[aria-label="Jeda carousel"] svg line:last-child,
+  #promo button[aria-label="Lanjutkan carousel"] svg line:last-child {
+    stroke: #008bdb;
+  }
+}
+
+@media (max-width: 359px) {
+  #promo > div > div > div:first-child h2 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
