@@ -1,4 +1,36 @@
 /* Desktop quick actions from Figma frame 6:767. Keep the existing controls and links. */
+/* Mobile quick actions from Figma frame 25:1716. */
+@media (max-width: 1279px) {
+  #main-content nav[aria-label="Akses cepat"] {
+    height: calc(74px + env(safe-area-inset-bottom));
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > :last-child {
+    display: none;
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > :nth-child(-n + 4) {
+    flex: 0 0 25%;
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > :nth-child(4) img {
+    display: none;
+  }
+
+  #main-content nav[aria-label="Akses cepat"] > :nth-child(4)::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("/assets/quick-action/halo-bca-figma.svg") center / contain no-repeat;
+  }
+}
+
+/* This floating control is no longer part of the homepage navigation. */
+#main-content button[aria-label="Kembali ke atas"] {
+  display: none;
+}
+
 @media (min-width: 1280px) {
   #main-content aside[aria-label="Akses cepat"] {
     right: 24px;
