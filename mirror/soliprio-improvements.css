@@ -121,8 +121,10 @@
   }
 
   #soliprio .bca-soliprio-card-solitaire .bca-soliprio-card-photo {
-    left: 22px;
+    left: 0;
     width: 258px;
+    object-fit: cover;
+    object-position: 42% center;
   }
 
   #soliprio .bca-soliprio-card::after {
@@ -175,9 +177,15 @@
     gap: 4px;
     margin: 4px 0 0;
     padding-left: 16px;
+    list-style: disc outside;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
+  }
+
+  #soliprio .bca-soliprio-benefits li {
+    display: list-item;
+    list-style-type: disc;
   }
 
   #soliprio .bca-soliprio-card-action {

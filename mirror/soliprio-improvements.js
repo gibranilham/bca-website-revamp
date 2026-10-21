@@ -28,7 +28,7 @@
     {
       tone: "solitaire",
       href: "/solitaire",
-      photo: "/assets/soliprio/solitaire-mobile-figma.png",
+      photo: "/assets/soliprio/solitaire-image.webp",
       logo: "/assets/soliprio/solitaire-logo.svg",
       name: "BCA Solitaire",
       benefits: ["Komunitas eksklusif BCA untuk relasi & kolaborasi", "Personal Banker khusus untuk layanan lebih personal"],
