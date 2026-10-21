@@ -9,12 +9,44 @@
     ["/assets/category/asuransi.webp", "/assets/product/asuransi-figma.jpg"],
     ["/assets/category/transaksi.webp", "/assets/product/transaksi-figma.jpg"],
   ]);
+  const observedPaginationFills = new WeakSet();
+
+  const syncPagination = (section) => {
+    const host = section.querySelector('.mt-6.flex.justify-center.xl\\:hidden');
+    const original = host?.querySelector(':scope > .h-2.w-16');
+    const fill = original?.firstElementChild;
+    if (!host || !fill) return;
+
+    let pagination = host.querySelector(':scope > .bca-product-pagination');
+    if (!pagination) {
+      pagination = document.createElement('div');
+      pagination.className = 'bca-product-pagination';
+      pagination.setAttribute('aria-hidden', 'true');
+      for (let i = 0; i < 5; i += 1) pagination.append(document.createElement('span'));
+      host.append(pagination);
+    }
+
+    const progress = Number.parseFloat(fill.style.width) || 100 / 7;
+    const item = Math.max(0, Math.min(6, Math.round(progress * 7 / 100) - 1));
+    const active = Math.round(item * 4 / 6);
+    [...pagination.children].forEach((dot, index) => dot.classList.toggle('is-active', index === active));
+
+    if (!observedPaginationFills.has(fill)) {
+      observedPaginationFills.add(fill);
+      new MutationObserver(() => syncPagination(section)).observe(fill, {
+        attributes: true,
+        attributeFilter: ['style'],
+      });
+    }
+  };
 
   const start = () => {
     const reconcile = () => {
       const section = document.getElementById("products");
       const content = section?.querySelector(":scope > .relative.z-10");
       if (!section || !content) return;
+
+      syncPagination(section);
 
       const originalLink = content.querySelector(':scope > div > a[href*="/goodplan-bca"]');
       if (originalLink) {

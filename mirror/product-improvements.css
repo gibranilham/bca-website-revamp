@@ -12,6 +12,10 @@
   border-radius: 16px;
 }
 
+#products .bca-product-pagination {
+  display: none;
+}
+
 @media (min-width: 1280px) {
   #products {
     padding-bottom: 130px;
@@ -130,6 +134,62 @@
     font-weight: 600;
     line-height: 1.5;
     white-space: nowrap;
+  }
+}
+
+/* Figma 1:2981 — compact mobile product rhythm and five-step pagination. */
+@media (max-width: 440px) {
+  #products {
+    padding-bottom: 40px;
+  }
+
+  #products > .relative.z-10 {
+    gap: 24px;
+  }
+
+  #products > .relative.z-10 > div:first-child > div:first-child {
+    padding-block: 4px;
+  }
+
+  #products .hide-scrollbar:has(> button[data-blueprint-part="productCard"]) {
+    height: 320px;
+  }
+
+  #products .hide-scrollbar > button[data-blueprint-part="productCard"] {
+    height: 320px !important;
+  }
+
+  #products .mt-6.flex.justify-center.xl\:hidden:has(> .bca-product-pagination) > .h-2.w-16 {
+    display: none;
+  }
+
+  #products .bca-product-pagination {
+    display: flex;
+    height: 8px;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #products .bca-product-pagination > span {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #005caa;
+  }
+
+  #products .bca-product-pagination > span.is-active {
+    position: relative;
+    width: 40px;
+    background: #a8d1ee;
+  }
+
+  #products .bca-product-pagination > span.is-active::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 24px;
+    border-radius: inherit;
+    background: #005caa;
+    content: "";
   }
 }
 
