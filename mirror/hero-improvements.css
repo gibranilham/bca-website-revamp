@@ -1,5 +1,5 @@
 /* Hero composition from Figma frame 1:4709. Carousel controls and quick-access links stay live. */
-#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible:has(img[src="/assets/cycle1/hero-figma.jpg"]) .flex.w-full.items-center.justify-start.gap-4.px-1:has(.animate-scroll-cue-dot) {
+#main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .flex.w-full.items-center.justify-start.gap-4.px-1:has(.animate-scroll-cue-dot) {
   display: none !important;
 }
 
@@ -89,6 +89,82 @@
 @media (max-width: 1279px) {
   #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
     padding-inline: 20px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .flex.w-full.flex-col.gap-5.xl\:hidden > button[aria-label="Cari"] {
+    display: none;
+  }
+}
+
+/* Mobile hero from Figma frame 1:2885 (392 × 510). */
+@media (max-width: 440px) {
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible {
+    height: max(450px, calc(100vw * 510 / 392));
+    min-height: 0;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-0.bottom-0.h-full {
+    transform: none !important;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible img[src="/assets/cycle1/hero-mobile-figma.png"] {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible:has(img[src="/assets/cycle1/hero-mobile-figma.png"][style*="opacity: 1"]) > div[aria-hidden="true"].pointer-events-none.absolute.inset-0 {
+    opacity: 0;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 {
+    top: calc(100vw * 153 / 392);
+    bottom: auto;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col {
+    gap: 0;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .flex.w-\[280px\].flex-col.items-start {
+    width: 208px;
+    gap: 12px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible h1 {
+    width: calc(100vw * 194 / 392);
+    max-width: 194px;
+    font-size: clamp(18px, calc(100vw * 20 / 392), 20px);
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {
+    width: 208px;
+    height: 48px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .flex.items-center {
+    margin-top: 19px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible > .absolute.inset-x-4.bottom-10.z-20 > .flex.flex-col > .flex.w-full.flex-col {
+    gap: 0;
+    margin-top: 25px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .hide-scrollbar > a {
+    width: min(150px, calc(100vw * 150 / 392));
+    height: 130px;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .hide-scrollbar > div {
+    width: min(326px, calc(100vw * 326 / 392));
+    min-width: min(326px, calc(100vw * 326 / 392));
+    height: 130px;
   }
 }
 
