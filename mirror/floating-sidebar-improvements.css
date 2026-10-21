@@ -3,6 +3,7 @@
 @media (max-width: 1279px) {
   #main-content nav[aria-label="Akses cepat"] {
     height: calc(74px + env(safe-area-inset-bottom));
+    transform: none !important;
   }
 
   #main-content nav[aria-label="Akses cepat"] > :last-child {
@@ -23,6 +24,84 @@
     width: 24px;
     height: 24px;
     background: url("/assets/quick-action/halo-bca-figma.svg") center / contain no-repeat;
+  }
+
+  [role="dialog"][aria-label="Produk"] > section {
+    padding-bottom: calc(74px + env(safe-area-inset-bottom));
+  }
+
+  [role="dialog"][aria-label="Produk"] > section:has(nav[aria-label="Produk"][aria-hidden="false"]) {
+    height: calc(366px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .bca-product-sheet-header {
+    position: relative;
+    flex: none;
+    height: 70px;
+    padding: 24px 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+
+  .bca-product-sheet-header::before {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 48px;
+    height: 4px;
+    border-radius: 999px;
+    background: #d1d5d8;
+    content: "";
+    transform: translateX(-50%);
+  }
+
+  .bca-product-sheet-header h2 {
+    margin: 0;
+    color: #005caa;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  .bca-product-sheet-header + div {
+    display: none;
+  }
+
+  [role="dialog"][aria-label="Produk"] > section:has(nav[aria-label="Produk"][aria-hidden="true"]) > .bca-product-sheet-header {
+    display: none;
+  }
+
+  [role="dialog"][aria-label="Produk"] > section:has(nav[aria-label="Produk"][aria-hidden="true"]) > .bca-product-sheet-header + div {
+    display: block;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] {
+    padding: 24px 16px 0;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] > .grid {
+    column-gap: 0;
+    row-gap: 16px;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] > .grid > button {
+    gap: 4px;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] > .grid > button > span:first-child {
+    width: 52px;
+    height: 52px;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] > .grid > button img {
+    width: 35px;
+    height: 35px;
+  }
+
+  [role="dialog"][aria-label="Produk"] nav[aria-label="Produk"][aria-hidden="false"] > .grid > button > span:last-child {
+    font-weight: 400;
+    line-height: 17px;
+    white-space: nowrap;
   }
 }
 
