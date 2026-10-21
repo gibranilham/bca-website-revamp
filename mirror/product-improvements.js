@@ -11,6 +11,62 @@
   ]);
   const observedPaginationFills = new WeakSet();
   const observedTimerNodes = new WeakSet();
+  const animatedCarousels = new WeakSet();
+
+  const smoothMobileCarousel = (section) => {
+    const carousel = section.querySelector('.hide-scrollbar:has(> button[data-blueprint-part="productCard"])');
+    if (!carousel || animatedCarousels.has(carousel)) return;
+    animatedCarousels.add(carousel);
+
+    const originalScrollTo = carousel.scrollTo.bind(carousel);
+    const duration = 700;
+    let frame = 0;
+    let animating = false;
+    let originalSnap = '';
+
+    const stop = () => {
+      if (!animating) return;
+      cancelAnimationFrame(frame);
+      animating = false;
+      carousel.style.scrollSnapType = originalSnap;
+    };
+
+    carousel.addEventListener('scroll', (event) => {
+      if (animating) event.stopImmediatePropagation();
+    }, { capture: true, passive: true });
+    carousel.addEventListener('pointerdown', stop, { passive: true });
+    carousel.addEventListener('wheel', stop, { passive: true });
+
+    carousel.scrollTo = (options) => {
+      if (options?.behavior !== 'smooth' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        stop();
+        originalScrollTo(options);
+        return;
+      }
+
+      stop();
+      const from = carousel.scrollLeft;
+      const to = Math.max(0, Math.min(carousel.scrollWidth - carousel.clientWidth, options.left ?? from));
+      if (Math.abs(to - from) < 1) return;
+
+      originalSnap = carousel.style.scrollSnapType;
+      carousel.style.scrollSnapType = 'none';
+      animating = true;
+      const started = performance.now();
+      const tick = (now) => {
+        const elapsed = Math.min(1, (now - started) / duration);
+        const eased = elapsed < 0.5 ? 4 * elapsed ** 3 : 1 - (-2 * elapsed + 2) ** 3 / 2;
+        carousel.scrollLeft = from + (to - from) * eased;
+        if (elapsed < 1) {
+          frame = requestAnimationFrame(tick);
+          return;
+        }
+        stop();
+        carousel.dispatchEvent(new Event('scroll'));
+      };
+      frame = requestAnimationFrame(tick);
+    };
+  };
 
   const syncTimer = (section, pagination) => {
     const carousel = section.querySelector('.hide-scrollbar:has(> button[data-blueprint-part="productCard"])');
@@ -81,6 +137,7 @@
       const content = section?.querySelector(":scope > .relative.z-10");
       if (!section || !content) return;
 
+      smoothMobileCarousel(section);
       syncPagination(section);
 
       const originalLink = content.querySelector(':scope > div > a[href*="/goodplan-bca"]');
