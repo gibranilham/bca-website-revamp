@@ -111,15 +111,22 @@
   #promo [class*="--idle-w"] {
     height: 138px;
     --gap: 12px;
-    --idle-w: min(320px, calc(100% - 32px));
-    --pad: max(16px, calc((100% - 320px) / 2));
+    --pad: clamp(16px, calc((100% - 320px) / 2), 36px);
+    --idle-w: calc(100% - 2 * var(--pad));
   }
 
   #promo [class*="--idle-w"] > div {
     height: 138px;
-    width: min(320px, calc(100% - 32px));
+    width: var(--idle-w);
     border: 0;
     border-radius: 12px;
+    transition: opacity 180ms ease-out;
+  }
+
+  #promo [class*="--idle-w"] > div:first-child,
+  #promo [class*="--idle-w"] > div:last-child {
+    visibility: hidden;
+    opacity: 0 !important;
   }
 
   #promo [class*="--idle-w"] > div:nth-child(3) {
@@ -161,6 +168,14 @@
   #promo button[aria-label="Jeda carousel"] svg line:last-child,
   #promo button[aria-label="Lanjutkan carousel"] svg line:last-child {
     stroke: #008bdb;
+  }
+}
+
+/* The content column stops growing at 560px; keep adjacent slides inside it. */
+@media (min-width: 561px) and (max-width: 1279px) {
+  #promo > div > div:nth-child(2) > div:nth-child(2) {
+    overflow: clip;
+    overflow-clip-margin: 16px;
   }
 }
 
