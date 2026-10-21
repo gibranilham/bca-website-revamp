@@ -159,6 +159,10 @@
     height: 320px !important;
   }
 
+  #products .hide-scrollbar > button[data-blueprint-part="productCard"] > div:has(> svg circle[stroke-dasharray]) {
+    display: none;
+  }
+
   #products .mt-6.flex.justify-center.xl\:hidden:has(> .bca-product-pagination) > .h-2.w-16 {
     display: none;
   }
@@ -175,18 +179,20 @@
     height: 8px;
     border-radius: 999px;
     background: #005caa;
+    opacity: 0.3;
   }
 
   #products .bca-product-pagination > span.is-active {
     position: relative;
     width: 40px;
     background: #a8d1ee;
+    opacity: 1;
   }
 
   #products .bca-product-pagination > span.is-active::before {
     position: absolute;
     inset: 0 auto 0 0;
-    width: 24px;
+    width: var(--bca-product-progress, 0%);
     border-radius: inherit;
     background: #005caa;
     content: "";

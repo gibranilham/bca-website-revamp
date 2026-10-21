@@ -10,6 +10,37 @@
     ["/assets/category/transaksi.webp", "/assets/product/transaksi-figma.jpg"],
   ]);
   const observedPaginationFills = new WeakSet();
+  const observedTimerNodes = new WeakSet();
+
+  const syncTimer = (section, pagination) => {
+    const carousel = section.querySelector('.hide-scrollbar:has(> button[data-blueprint-part="productCard"])');
+    if (!carousel) return;
+
+    const carouselCenter = carousel.getBoundingClientRect().left + carousel.clientWidth / 2;
+    const activeRings = [...carousel.querySelectorAll('button[data-blueprint-part="productCard"] > div.opacity-100 circle[stroke-dasharray]')];
+    const ring = activeRings.sort((a, b) => {
+      const aCard = a.closest('button');
+      const bCard = b.closest('button');
+      const aDistance = Math.abs(aCard.getBoundingClientRect().left + aCard.clientWidth / 2 - carouselCenter);
+      const bDistance = Math.abs(bCard.getBoundingClientRect().left + bCard.clientWidth / 2 - carouselCenter);
+      return aDistance - bDistance;
+    })[0];
+    const circumference = Number.parseFloat(ring?.getAttribute('stroke-dasharray'));
+    const offset = Number.parseFloat(ring?.style.strokeDashoffset);
+    const progress = Number.isFinite(circumference) && circumference > 0 && Number.isFinite(offset)
+      ? Math.max(0, Math.min(1, 1 - offset / circumference))
+      : 0;
+    pagination.querySelector('.is-active')?.style.setProperty('--bca-product-progress', `${progress * 100}%`);
+
+    for (const node of carousel.querySelectorAll('button[data-blueprint-part="productCard"] > div:has(circle[stroke-dasharray]), button[data-blueprint-part="productCard"] circle[stroke-dasharray]')) {
+      if (observedTimerNodes.has(node)) continue;
+      observedTimerNodes.add(node);
+      new MutationObserver(() => syncTimer(section, pagination)).observe(node, {
+        attributes: true,
+        attributeFilter: [node.tagName === 'circle' ? 'style' : 'class'],
+      });
+    }
+  };
 
   const syncPagination = (section) => {
     const host = section.querySelector('.mt-6.flex.justify-center.xl\\:hidden');
@@ -29,7 +60,11 @@
     const progress = Number.parseFloat(fill.style.width) || 100 / 7;
     const item = Math.max(0, Math.min(6, Math.round(progress * 7 / 100) - 1));
     const active = Math.round(item * 4 / 6);
-    [...pagination.children].forEach((dot, index) => dot.classList.toggle('is-active', index === active));
+    [...pagination.children].forEach((dot, index) => {
+      dot.classList.toggle('is-active', index === active);
+      if (index !== active) dot.style.removeProperty('--bca-product-progress');
+    });
+    syncTimer(section, pagination);
 
     if (!observedPaginationFills.has(fill)) {
       observedPaginationFills.add(fill);
