@@ -44,10 +44,10 @@
       const element = mutation.target instanceof Element ? mutation.target : mutation.target.parentElement;
       return element?.closest(heroSelector);
     })) return;
-    requestAnimationFrame(reconcile);
+    reconcile();
   });
   observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   window.addEventListener("resize", reconcile);
-  if (document.readyState === "complete") reconcile();
-  else window.addEventListener("load", reconcile, { once: true });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", reconcile, { once: true });
+  else reconcile();
 })();
