@@ -131,7 +131,7 @@
   }
 
   #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible .flex.w-\[280px\].flex-col.items-start {
-    width: 208px;
+    width: calc(100vw - 32px);
     gap: 12px;
   }
 
@@ -141,6 +141,12 @@
     font-size: clamp(18px, calc(100vw * 20 / 392), 20px);
     line-height: 1.4;
     letter-spacing: -0.4px;
+    min-height: 3lh;
+  }
+
+  #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible[data-bca-hero-second-slide] h1 {
+    width: min(280px, calc(100vw - 32px));
+    max-width: none;
   }
 
   #main-content .page-stack > .relative.z-10 > .relative.overflow-x-visible button[data-bca-hero-cta] {

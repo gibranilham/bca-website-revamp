@@ -1,4 +1,4 @@
-/* Keep the first slide's CTA aligned with its Figma label across React carousel updates. */
+/* Keep hero copy and CTA presentation consistent across React carousel updates. */
 (() => {
   const desktopTitle = "Wujudkan Impian Masa Depan dengan Tabungan BCA";
   const mobileTitle = "Wujudkan Impian dengan Tabungan Masa Depan";
@@ -20,21 +20,23 @@
     const button = hero.querySelector(".animate-hero-cta button");
     if (!heading || !button) return;
     const isFirstSlide = heading.textContent === desktopTitle || heading.textContent === mobileTitle;
+    hero.toggleAttribute("data-bca-hero-second-slide", heading.textContent.startsWith("BCA Presale"));
+    button.setAttribute("data-bca-hero-cta", "");
     if (isFirstSlide) {
       const desiredTitle = mobile ? mobileTitle : desktopTitle;
       const desiredCta = mobile ? mobileCta : desktopCta;
       if (heading.textContent !== desiredTitle) heading.textContent = desiredTitle;
       const label = button.querySelector("span");
       if (label && label.textContent !== desiredCta) label.textContent = desiredCta;
-      button.setAttribute("data-bca-hero-cta", "");
+      button.setAttribute("data-bca-hero-scroll-products", "");
     } else {
-      button.removeAttribute("data-bca-hero-cta");
+      button.removeAttribute("data-bca-hero-scroll-products");
     }
   };
 
   document.addEventListener("click", (event) => {
     if (!(event.target instanceof Element)) return;
-    const button = event.target.closest("button[data-bca-hero-cta]");
+    const button = event.target.closest("button[data-bca-hero-scroll-products]");
     if (!button) return;
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
