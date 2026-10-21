@@ -48,6 +48,21 @@
     top: 56px;
   }
 
+  /* Figma 1:2980 — 48px tabs with 14px labels and a 4px active underline. */
+  #main-content nav[aria-label="Navigasi bagian halaman"] {
+    height: 48px;
+  }
+
+  #main-content nav[aria-label="Navigasi bagian halaman"] > .hide-scrollbar {
+    padding-inline: 0;
+  }
+
+  #main-content nav[aria-label="Navigasi bagian halaman"] button[data-blueprint-part="tab"] {
+    height: 48px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   /* The mobile section tabs scroll horizontally without chevron overlays (Figma 1:2980). */
   #main-content nav[aria-label="Navigasi bagian halaman"] > div:has(> button[aria-label^="Geser navigasi"]) {
     display: none;
