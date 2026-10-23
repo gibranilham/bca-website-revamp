@@ -13,6 +13,8 @@ const port = Number(process.env.PORT || 3001);
 const host = process.env.BCA_CLONE_HOST || "127.0.0.1";
 const sourceOrigin = "https://bca-homepage-revamp.vercel.app";
 const sectionNavigationChunk = "/_next/static/chunks/3608-304218102e3a085a.js";
+const cookieBannerChunk = "/_next/static/chunks/28-17dd056f93f2a169.js";
+const originalCookieBannerExport = "28258:(e,t,r)=>{r.d(t,{default:()=>c});";
 const originalSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:1})";
 const easedSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:.8,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2})";
 const sectionNavigationScript = readFileSync(resolve(root, "mirror", "." + sectionNavigationChunk), "utf8");
@@ -20,6 +22,14 @@ if (!sectionNavigationScript.includes(originalSectionScroll)) {
   throw new Error("Section navigation scroll handler was not found in the mirrored runtime");
 }
 const adjustedSectionNavigationScript = sectionNavigationScript.replace(originalSectionScroll, easedSectionScroll);
+const cookieBannerScript = readFileSync(resolve(root, "mirror", "." + cookieBannerChunk), "utf8");
+if (!cookieBannerScript.includes(originalCookieBannerExport)) {
+  throw new Error("Cookie banner component was not found in the mirrored runtime");
+}
+const adjustedCookieBannerScript = cookieBannerScript.replace(
+  originalCookieBannerExport,
+  "28258:(e,t,r)=>{r.d(t,{default:()=>()=>null});",
+);
 const navigationBridge = `<script>(function(){document.addEventListener("click",function(event){var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest("a[href]");if(!anchor)return;var url=new URL(anchor.href,location.href);if(url.origin!==location.origin)return;if(url.pathname==="/kartu-kredit"&&location.pathname!=="/kartu-kredit"){event.preventDefault();event.stopImmediatePropagation();location.assign(url.href);return}if(url.pathname==="/"||url.pathname==="/id"||url.pathname==="/kartu-kredit"||url.pathname==="/kartu-kredit/bandingkan"||url.pathname==="/kartu-kredit/krisflyer-visa-signature")return;event.preventDefault();event.stopImmediatePropagation();location.assign(${JSON.stringify(sourceOrigin)}+url.pathname+url.search+url.hash)},true)})();</script>`;
 const homepage = readFileSync(sourceHtml, "utf8")
   .replaceAll("http://localhost:3000", `http://localhost:${port}`)
@@ -110,6 +120,13 @@ export function handleRequest(req, res) {
     return serve(res, resolve(root, "mirror", "." + pathname));
   }
   if (pathname.startsWith("/_next/static/")) {
+    if (pathname === cookieBannerChunk) {
+      return res.writeHead(200, {
+        "Content-Type": types[".js"],
+        "Content-Length": Buffer.byteLength(adjustedCookieBannerScript),
+        "Cache-Control": "no-cache",
+      }).end(adjustedCookieBannerScript);
+    }
     if (pathname === sectionNavigationChunk) {
       return res.writeHead(200, {
         "Content-Type": types[".js"],
