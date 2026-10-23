@@ -35,20 +35,12 @@ export function renderCreditCardList() {
   (() => {
     const section = document.getElementById('card-list');
     const cards = [...section.querySelectorAll('.cc-card')];
-    const grid = section.querySelector('#card-grid');
     const filters = [...section.querySelectorAll('[data-card-filter]')];
     const showAll = section.querySelector('.cc-list__show-all');
     let category = 'all';
     let expanded = false;
     const mobile = matchMedia('(max-width: 767px)');
     const comparisonMobile = matchMedia('(max-width: 1279px)');
-    const sheet = document.createElement('dialog');
-    sheet.className = 'cc-card-sheet';
-    sheet.setAttribute('aria-labelledby', 'cc-card-sheet-title');
-    sheet.innerHTML = '<div class="cc-card-sheet__header"><h2 id="cc-card-sheet-title">Daftar Kartu</h2><button type="button" class="cc-card-sheet__close" aria-label="Tutup daftar kartu">&times;</button></div><div id="cc-card-sheet-list" class="cc-card-sheet__list"></div>';
-    document.body.append(sheet);
-    const sheetList = sheet.querySelector('.cc-card-sheet__list');
-    let previousBodyOverflow = '';
     const selected = new Set();
     const comparison = document.createElement('aside');
     comparison.className = 'cc-comparison';
@@ -161,46 +153,17 @@ export function renderCreditCardList() {
 
     function update() {
       const matches = cards.filter((card) => category === 'all' || card.dataset.category === category);
-      const limit = mobile.matches ? 3 : expanded ? matches.length : 8;
+      const limit = expanded ? matches.length : mobile.matches ? 3 : 8;
       cards.forEach((card) => {
         const index = matches.indexOf(card);
         card.hidden = index < 0 || index >= limit;
       });
       const remaining = Math.max(matches.length - limit, 0);
       showAll.hidden = remaining === 0;
-      showAll.setAttribute('aria-controls', mobile.matches ? 'cc-card-sheet-list' : 'card-grid');
-      showAll.setAttribute('aria-expanded', String(sheet.open || (!mobile.matches && expanded)));
-      section.classList.toggle('is-expanded', !mobile.matches && expanded);
+      showAll.setAttribute('aria-expanded', String(expanded));
+      section.classList.toggle('is-expanded', expanded);
       section.querySelector('.cc-list__show-all-mobile').textContent = 'Lihat ' + remaining + ' kartu lainnya';
     }
-
-    function restoreSheetCards() {
-      cards.forEach((card) => grid.append(card));
-      document.body.append(comparison);
-      document.body.style.overflow = previousBodyOverflow;
-      update();
-      showAll.focus({ preventScroll: true });
-    }
-
-    function openSheet() {
-      const matches = cards.filter((card) => category === 'all' || card.dataset.category === category);
-      const remaining = matches.slice(3);
-      if (!remaining.length) return;
-      remaining.forEach((card) => {
-        card.hidden = false;
-        sheetList.append(card);
-      });
-      previousBodyOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      sheet.append(comparison);
-      sheet.showModal();
-      showAll.setAttribute('aria-expanded', 'true');
-      sheet.querySelector('.cc-card-sheet__close').focus();
-    }
-
-    sheet.querySelector('.cc-card-sheet__close').addEventListener('click', () => sheet.close());
-    sheet.addEventListener('click', (event) => { if (event.target === sheet) sheet.close(); });
-    sheet.addEventListener('close', restoreSheetCards);
 
     filters.forEach((filter) => filter.addEventListener('click', () => {
       category = filter.dataset.cardFilter;
@@ -213,11 +176,10 @@ export function renderCreditCardList() {
       update();
     }));
     showAll.addEventListener('click', () => {
-      if (mobile.matches) openSheet();
-      else { expanded = true; update(); }
+      expanded = true;
+      update();
     });
     mobile.addEventListener('change', () => {
-      if (sheet.open) sheet.close();
       expanded = false;
       while (selected.size > maxSelected()) selected.delete([...selected].at(-1));
       syncCheckboxes();

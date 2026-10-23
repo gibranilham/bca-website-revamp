@@ -75,30 +75,11 @@
   .cc-card__compare{min-width:0;font-size:12px}
   .cc-card__apply{width:100%;min-height:36px;box-sizing:border-box;font-size:12px}
   .cc-list__show-all{min-height:32px;margin-top:16px;font-size:12px}
-  .cc-list__show-all:disabled{opacity:1;cursor:default}
-  .cc-list__show-all:disabled:hover{text-decoration:none}
   .cc-list__show-all-desktop{display:none}
   .cc-list__show-all-mobile{display:inline}
 }
 @media(max-width:359px){.cc-card__image-wrap{width:101px;flex-basis:101px}.cc-card__compare{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.cc-list__filters button{transition:none}}
-
-.cc-card-sheet{width:min(100%,520px);height:min(94dvh,920px);max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:auto auto 0;padding:0;border:0;border-radius:24px 24px 0 0;background:#fff;color:#0a4376;box-shadow:0 -12px 38px rgb(0 30 60 / 20%);overflow:hidden}
-.cc-card-sheet[open]{display:flex;flex-direction:column;animation:cc-card-sheet-enter .32s cubic-bezier(.2,.8,.2,1) both}
-.cc-card-sheet::backdrop{background:rgb(0 24 49 / 48%);animation:cc-card-sheet-backdrop .32s ease both}
-.cc-card-sheet__header{display:flex;min-height:72px;flex:none;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid #e6edf3;background:#fff}
-.cc-card-sheet__header h2{margin:0;color:#0b508d;font-size:18px;line-height:1.25}
-.cc-card-sheet__close{display:grid;width:32px;height:32px;flex:none;place-items:center;padding:0;border:1px solid #a7cce8;border-radius:50%;background:#fff;color:#0b508d;font:24px/1 Arial,sans-serif;cursor:pointer}
-.cc-card-sheet__close:focus-visible{outline:3px solid #005caa;outline-offset:2px}
-.cc-card-sheet__list{display:grid;min-height:0;grid-auto-rows:max-content;gap:16px;padding:16px 16px calc(24px + env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}
-.cc-card-sheet .cc-card:not(.is-compared){outline:1px solid #e9ecef}
-.cc-card-sheet:has(.cc-comparison:not([hidden])) .cc-card-sheet__list{padding-bottom:calc(250px + env(safe-area-inset-bottom))}
-.cc-card-sheet:has(.cc-comparison[data-mode=minimized]:not([hidden])) .cc-card-sheet__list{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
-.cc-card-sheet .cc-comparison,.cc-card-sheet .cc-comparison[data-mode=minimized]{position:absolute;right:0;bottom:0;left:0}
-@keyframes cc-card-sheet-enter{from{transform:translateY(100%)}to{transform:translateY(0)}}
-@keyframes cc-card-sheet-backdrop{from{opacity:0}to{opacity:1}}
-@media(min-width:768px){.cc-card-sheet{display:none!important}}
-@media(prefers-reduced-motion:reduce){.cc-card-sheet[open],.cc-card-sheet::backdrop{animation:none}}
 
 .cc-comparison{position:fixed;z-index:55;right:12px;bottom:24px;left:12px;max-width:1040px;margin-inline:auto;border:1px solid #e0e4e8;border-radius:16px;background:#fff;color:#272b30;box-shadow:0 20px 45px rgb(10 34 55 / 24%);transition:max-width .3s ease,bottom .3s ease,transform .3s ease,opacity .3s ease}
 .cc-comparison[hidden]{display:none}
