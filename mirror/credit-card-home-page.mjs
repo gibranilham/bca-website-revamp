@@ -16,6 +16,7 @@ export function renderCreditCardHomePage(homepage) {
     ].join(""),
     markerId: "card-list",
     pageClass: "bca-credit-landing-runtime",
+    showEvent: false,
     title: "Kartu Kredit BCA",
     styles: [
       "credit-card-home-page.css",
