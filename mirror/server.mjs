@@ -1,6 +1,10 @@
 import { createServer } from "node:http";
 import { createReadStream, readFileSync, statSync } from "node:fs";
 import { resolve, sep } from "node:path";
+import { renderCreditCardHomePage } from "./credit-card-home-page.mjs";
+import { renderCreditCardComparePage } from "./credit-card-compare-page.mjs";
+import { renderCreditCardDetailPage } from "./credit-card-detail-page.mjs";
+import { getComparedCards } from "./credit-card-data.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const sourceHtml = resolve(root, "docs/research/bca-homepage/source.html");
@@ -9,13 +13,13 @@ const host = process.env.BCA_CLONE_HOST || "127.0.0.1";
 const sourceOrigin = "https://bca-homepage-revamp.vercel.app";
 const sectionNavigationChunk = "/_next/static/chunks/3608-304218102e3a085a.js";
 const originalSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:1})";
-const easedSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:1.6,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2})";
+const easedSectionScroll = "m?m.scrollTo(a,{offset:-56,duration:.8,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2})";
 const sectionNavigationScript = readFileSync(resolve(root, "mirror", "." + sectionNavigationChunk), "utf8");
 if (!sectionNavigationScript.includes(originalSectionScroll)) {
   throw new Error("Section navigation scroll handler was not found in the mirrored runtime");
 }
 const adjustedSectionNavigationScript = sectionNavigationScript.replace(originalSectionScroll, easedSectionScroll);
-const navigationBridge = `<script>(function(){document.addEventListener("click",function(event){var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest("a[href]");if(!anchor)return;var url=new URL(anchor.href,location.href);if(url.origin!==location.origin||url.pathname==="/"||url.pathname==="/id")return;event.preventDefault();event.stopImmediatePropagation();location.assign(${JSON.stringify(sourceOrigin)}+url.pathname+url.search+url.hash)},true)})();</script>`;
+const navigationBridge = `<script>(function(){document.addEventListener("click",function(event){var target=event.target;if(!(target instanceof Element))return;var anchor=target.closest("a[href]");if(!anchor)return;var url=new URL(anchor.href,location.href);if(url.origin!==location.origin)return;if(url.pathname==="/kartu-kredit"&&location.pathname!=="/kartu-kredit"){event.preventDefault();event.stopImmediatePropagation();location.assign(url.href);return}if(url.pathname==="/"||url.pathname==="/id"||url.pathname==="/kartu-kredit"||url.pathname==="/kartu-kredit/bandingkan"||url.pathname==="/kartu-kredit/krisflyer-visa-signature")return;event.preventDefault();event.stopImmediatePropagation();location.assign(${JSON.stringify(sourceOrigin)}+url.pathname+url.search+url.hash)},true)})();</script>`;
 const homepage = readFileSync(sourceHtml, "utf8")
   .replaceAll("http://localhost:3000", `http://localhost:${port}`)
   .replaceAll("/assets/cycle1/hero-image.webp", "/assets/cycle1/hero-figma.jpg")
@@ -58,8 +62,10 @@ function serve(res, filename, fallbackUrl) {
 
 createServer((req, res) => {
   let pathname;
+  let requestUrl;
   try {
-    pathname = new URL(req.url || "/", "http://localhost").pathname;
+    requestUrl = new URL(req.url || "/", "http://localhost");
+    pathname = requestUrl.pathname;
   } catch {
     return res.writeHead(400).end("Bad request");
   }
@@ -70,10 +76,36 @@ createServer((req, res) => {
       "Cache-Control": "no-cache",
     }).end(homepage);
   }
+  if (pathname === "/kartu-kredit" || pathname === "/kartu-kredit/") {
+    const creditCardPage = renderCreditCardHomePage(homepage);
+    return res.writeHead(200, {
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": Buffer.byteLength(creditCardPage),
+      "Cache-Control": "no-cache",
+    }).end(creditCardPage);
+  }
+  if (pathname === "/kartu-kredit/bandingkan" || pathname === "/kartu-kredit/bandingkan/") {
+    const selectedCards = getComparedCards(requestUrl.searchParams.get("cards"));
+    if (selectedCards.length < 2) return res.writeHead(302, { Location: "/kartu-kredit#card-list" }).end();
+    const comparePage = renderCreditCardComparePage(homepage, selectedCards);
+    return res.writeHead(200, {
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": Buffer.byteLength(comparePage),
+      "Cache-Control": "no-cache",
+    }).end(comparePage);
+  }
+  if (pathname === "/kartu-kredit/krisflyer-visa-signature" || pathname === "/kartu-kredit/krisflyer-visa-signature/") {
+    const detailPage = renderCreditCardDetailPage(homepage);
+    return res.writeHead(200, {
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": Buffer.byteLength(detailPage),
+      "Cache-Control": "no-cache",
+    }).end(detailPage);
+  }
   if (["/favicon.ico", "/icon.svg", "/apple-icon.png", "/manifest.webmanifest", "/opengraph-bcacoid.png", "/web-app-192.png", "/web-app-512.png", "/maskable-192.png", "/maskable-512.png"].includes(pathname)) {
     return serve(res, resolve(root, "public", "." + pathname));
   }
-  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/soliprio-improvements.css", "/soliprio-improvements.js", "/promo-improvements.css", "/floating-sidebar-improvements.css", "/floating-sidebar-improvements.js", "/hero-improvements.css", "/hero-improvements.js", "/homepage-details.css"].includes(pathname)) {
+  if (["/faq-improvements.css", "/faq-improvements.js", "/news-improvements.css", "/news-improvements.js", "/product-improvements.css", "/product-improvements.js", "/soliprio-improvements.css", "/soliprio-improvements.js", "/promo-improvements.css", "/floating-sidebar-improvements.css", "/floating-sidebar-improvements.js", "/hero-improvements.css", "/hero-improvements.js", "/homepage-details.css", "/credit-card-home-page.css", "/credit-card-hero.css", "/credit-card-tabs.css", "/credit-card-list.css", "/credit-card-benefits.css", "/credit-card-features.css", "/credit-card-tutorial.css", "/credit-card-faq.css", "/credit-card-hero-navigation.css", "/credit-card-compare-hero.css", "/credit-card-compare-table.css", "/credit-card-detail-hero.css", "/credit-card-detail-benefits.css", "/credit-card-detail-miles.css", "/credit-card-detail-banner.css", "/credit-card-detail-information.css"].includes(pathname)) {
     return serve(res, resolve(root, "mirror", "." + pathname));
   }
   if (pathname.startsWith("/_next/static/")) {

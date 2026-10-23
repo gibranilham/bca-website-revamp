@@ -1,0 +1,76 @@
+.cc-tutorial{position:relative;isolation:isolate;overflow:hidden;scroll-margin-top:132px;background:#0c1013 url('/assets/kartu-kredit/tutorial-desktop-bg-secondary.jpg') center / cover no-repeat;color:#fff}
+.cc-tutorial::before{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.48),rgba(0,0,0,.32) 55%,rgba(0,0,0,.08));content:''}
+.cc-tutorial__inner{max-width:1280px;min-height:920px;margin:auto;padding:80px 0}
+.cc-tutorial__heading{height:112px}
+.cc-tutorial__eyebrow,.cc-tutorial__mobile-copy,.cc-tutorial__intro,.cc-tutorial__mobile-layout{display:none}
+.cc-tutorial__heading h2{margin:0;font-size:40px;font-weight:600;line-height:56px;letter-spacing:-.02em}
+.cc-tutorial__desktop-layout{display:grid;grid-template-columns:320px minmax(0,945px);gap:15px;margin-top:40px;align-items:start}
+.cc-tutorial__download,.cc-tutorial__panel{border:1px solid rgb(255 255 255 / 15%);border-radius:24px;background:rgb(0 17 31 / 76%);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.cc-tutorial__download{height:466px;padding:32px 16px}
+.cc-tutorial__download h3{margin:0;font-size:16px;font-weight:600;line-height:24px;text-align:center}
+.cc-tutorial__download-options{display:flex;justify-content:center;gap:8px;height:150px;margin-top:32px}
+.cc-tutorial__qr{display:grid;width:150px;height:150px;flex:none;place-items:center;border-radius:12px;background:#fff}
+.cc-tutorial__qr img{display:block;width:134px;height:134px}
+.cc-tutorial__stores{display:flex;width:114px;flex-direction:column;align-items:center;gap:6px;padding:18px 12px;border-radius:12px;background:#fff;color:#253443}
+.cc-tutorial__stores p{margin:0 0 6px;font-size:11px;font-weight:600;line-height:15px;text-align:center}
+.cc-tutorial__stores a,.cc-tutorial__stores img{display:block;width:90px;height:30px}
+.cc-tutorial__qr-copy{margin:32px 0 0;font-size:14px;line-height:21px;text-align:center}
+.cc-tutorial__divider{display:flex;align-items:center;gap:18px;margin:32px 0;font-size:12px}
+.cc-tutorial__divider::before,.cc-tutorial__divider::after{height:1px;flex:1;background:rgb(255 255 255 / 55%);content:''}
+.cc-tutorial__web-apply{display:flex;height:40px;align-items:center;justify-content:center;border-radius:999px;background:#006bbd;color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+.cc-tutorial__web-apply:hover,.cc-tutorial__apply-mybca:hover{background:#005fa8}
+.cc-tutorial__panel{display:flex;min-width:0;height:608px;gap:20px;overflow:hidden;padding:24px}
+.cc-tutorial__phone{display:block;width:280px;height:560px;flex:none;object-fit:contain}
+.cc-tutorial__panel-content{min-width:0;flex:1}
+.cc-tutorial__panel-eyebrow{margin:0;color:rgb(255 255 255 / 70%);font-size:14px;line-height:21px}
+.cc-tutorial__panel-content>h3{margin:8px 0 20px;font-size:28px;font-weight:600;line-height:36px}
+.cc-tutorial__steps{counter-reset:cc-tutorial-step;display:grid;gap:24px;margin:0;padding:0;list-style:none}
+.cc-tutorial__steps li{counter-increment:cc-tutorial-step;position:relative;min-height:86px;border-radius:12px}
+.cc-tutorial__steps li:hover{background:rgb(255 255 255 / 8%)}
+.cc-tutorial__step{display:block;width:100%;min-height:inherit;padding:0 0 0 52px;border:0;border-radius:inherit;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.cc-tutorial__steps li:not(:last-child)::after{position:absolute;top:33px;bottom:-26px;left:15px;width:1px;background:rgb(255 255 255 / 62%);content:''}
+.cc-tutorial__steps li::before{position:absolute;top:0;left:0;display:grid;width:32px;height:32px;place-items:center;border:1px solid #fff;border-radius:50%;content:counter(cc-tutorial-step);font-size:16px;pointer-events:none}
+.cc-tutorial__steps li.is-complete::before{background:#fff;color:#083f70}
+.cc-tutorial__step-title{display:block;font-size:18px;font-weight:600;line-height:24px}
+.cc-tutorial__step-description{display:block;max-width:510px;margin-top:6px;color:rgb(255 255 255 / 76%);font-size:14px;line-height:21px}
+.cc-tutorial__more{display:inline-flex;align-items:center;gap:8px;margin:8px 0 0 52px;color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+.cc-tutorial__more:hover{text-decoration:underline}
+.cc-tutorial a:focus-visible,.cc-tutorial button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:1360px){.cc-tutorial__inner{padding-right:40px;padding-left:40px}}
+@media(max-width:1023px){.cc-tutorial__inner{min-height:0;padding:56px 32px}.cc-tutorial__desktop-layout{grid-template-columns:280px minmax(0,1fr)}.cc-tutorial__download{height:auto}.cc-tutorial__download-options{transform:scale(.87);transform-origin:left top;width:288px;margin-bottom:-19px}.cc-tutorial__panel{height:auto}.cc-tutorial__phone{width:190px;height:auto;align-self:start}.cc-tutorial__panel-content>h3{font-size:22px;line-height:30px}.cc-tutorial__steps{gap:12px}.cc-tutorial__steps li{min-height:70px}.cc-tutorial__step-title{font-size:15px}.cc-tutorial__step-description{font-size:12px;line-height:17px}}
+@media(max-width:767px){
+  .cc-tutorial{scroll-margin-top:104px;background-image:linear-gradient(180deg,rgba(0,15,28,.72),rgba(0,15,28,.82)),url('/assets/kartu-kredit/tutorial-desktop-bg-secondary.jpg');background-position:60% center}
+  .cc-tutorial::before{display:none}
+  .cc-tutorial__inner{min-height:780px;padding:40px 0}
+  .cc-tutorial__heading{height:126px;padding:0 16px}
+  .cc-tutorial__eyebrow{display:block;margin:0 0 10px;font-size:12px;line-height:12px}
+  .cc-tutorial__desktop-copy{display:none}
+  .cc-tutorial__mobile-copy{display:inline}
+  .cc-tutorial__heading h2{max-width:343px;font-size:20px;line-height:30px;letter-spacing:0}
+  .cc-tutorial__intro{display:block;max-width:343px;margin:10px 0 0;color:rgb(255 255 255 / 82%);font-size:12px;line-height:17px}
+  .cc-tutorial__desktop-layout{display:none}
+  .cc-tutorial__mobile-layout{display:block}
+  .cc-tutorial__mobile-graphic{height:287px;margin:24px 16px 0;padding-top:10px}
+  .cc-tutorial__mobile-graphic img{display:block;width:100%;max-width:343px;height:277px;object-fit:contain}
+  .cc-tutorial__show-steps{display:flex;align-items:center;justify-content:center;gap:8px;width:134px;height:24px;margin:24px auto 0;padding:0;border:0;background:transparent;color:#fff;font:inherit;font-size:14px;cursor:pointer}
+  .cc-tutorial__show-steps span{display:inline-block;font-size:22px;line-height:1;transition:transform .2s}
+  .cc-tutorial__show-steps[aria-expanded="true"] span{transform:rotate(180deg)}
+  .cc-tutorial__mobile-steps{margin:20px 16px 0;padding:20px 16px;border-radius:16px;background:rgb(0 17 31 / 84%)}
+  .cc-tutorial__mobile-steps[hidden]{display:none}
+  .cc-tutorial__mobile-steps .cc-tutorial__steps{gap:16px}
+  .cc-tutorial__mobile-steps .cc-tutorial__steps li{min-height:0}
+  .cc-tutorial__mobile-steps .cc-tutorial__step{padding-left:40px}
+  .cc-tutorial__mobile-steps .cc-tutorial__steps li:not(:last-child)::after{bottom:-17px}
+  .cc-tutorial__mobile-steps .cc-tutorial__step-title{font-size:14px;line-height:20px}
+  .cc-tutorial__mobile-steps .cc-tutorial__step-description{font-size:12px;line-height:18px}
+  .cc-tutorial__mobile-cta{min-height:191px;margin-top:24px;padding:25px 16px 0;border-top:1px solid rgb(255 255 255 / 18%)}
+  .cc-tutorial__mobile-cta h3{margin:0 0 24px;font-size:14px;font-weight:600;line-height:21px;text-align:center}
+  .cc-tutorial__apply-mybca,.cc-tutorial__apply-web{display:flex;width:100%;height:40px;align-items:center;justify-content:center;border:1px solid #fff;border-radius:999px;color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+  .cc-tutorial__apply-mybca{border-color:#006cbd;background:#006cbd}
+  .cc-tutorial__mobile-or{display:flex;height:41px;align-items:center;justify-content:center;color:rgb(255 255 255 / 76%);font-size:12px}
+  .cc-tutorial__mobile-or::before,.cc-tutorial__mobile-or::after{height:1px;flex:1;background:rgb(255 255 255 / 35%);content:''}
+  .cc-tutorial__mobile-or span{padding:0 12px}
+  .cc-tutorial__apply-web:hover{background:rgb(255 255 255 / 12%)}
+}
+@media(max-width:359px){.cc-tutorial__heading h2{font-size:19px;line-height:28px}.cc-tutorial__intro{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.cc-tutorial__show-steps span{transition:none}}

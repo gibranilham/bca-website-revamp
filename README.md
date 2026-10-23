@@ -1,28 +1,34 @@
-# Klon beranda BCA
+# BCA website revamp prototype
 
-Beranda lokal dari [bca-homepage-revamp.vercel.app](https://bca-homepage-revamp.vercel.app/), ditempatkan dalam proyek yang dibuat dari `ai-website-cloner-template`. Cakupan yang disepakati adalah **beranda dan interaksinya**. Tautan ke halaman internal yang tidak termasuk cakupan diarahkan ke situs sumber.
+Prototipe lokal untuk beranda BCA yang ditingkatkan dan alur kartu kredit. Halaman yang saling terhubung:
 
-Tag `baseline-2026-10-20` menyimpan versi awal ini. Pembaruan berikutnya dapat dibuat pada cabang terpisah tanpa mengubah tag tersebut.
+- `/` — beranda BCA
+- `/kartu-kredit` — landing page kartu kredit
+- `/kartu-kredit/krisflyer-visa-signature` — detail kartu BCA Singapore Airlines KrisFlyer Visa Signature
+- `/kartu-kredit/bandingkan?cards=1,2` — perbandingan dua kartu yang dipilih
 
-## Jalankan
+Kartu kredit pada beranda membuka landing page. Kartu pertama pada landing page membuka detailnya; pilihan **Bandingkan** membuka halaman perbandingan. Tautan di luar cakupan prototipe dapat mengarah ke situs BCA atau sumber referensi.
+
+## Menjalankan secara lokal
+
+Gunakan Node.js 24 atau lebih baru.
 
 ```bash
+npm ci
 npm run check
-npm run start
+npm run dev
 ```
 
-Buka [http://localhost:3001/](http://localhost:3001/). Port dapat diubah dengan `PORT=... npm run start`.
+Buka [http://localhost:3001/](http://localhost:3001/). Gunakan `PORT=3002 npm run dev` jika port 3001 sedang dipakai. `npm run start` menjalankan server tanpa mode watch.
 
-## Isi proyek
+## Struktur
 
-- `docs/research/bca-homepage/source.html`: HTML beranda yang diambil dari URL sumber pada 20 Oktober 2026.
-- `mirror/_next/static`: CSS, font, dan JavaScript publik yang dirujuk beranda, termasuk chunk yang dimuat saat berinteraksi.
-- `public/assets`: gambar dan ikon publik yang digunakan beranda.
-- `mirror/server.mjs`: server lokal untuk beranda dan berkas statis. Aset yang belum ada secara lokal diarahkan ke URL sumber.
-- `scripts/fetch-source-runtime.py`, `scripts/fetch-homepage-assets.py`: skrip untuk memperbarui aset publik jika sumber berubah.
+- `mirror/server.mjs` menyajikan keempat rute dan aset lokal.
+- `mirror/credit-card-*.mjs` dan `.css` berisi halaman kartu kredit, komponen, dan interaksinya.
+- `mirror/*-improvements.*` berisi penyesuaian beranda.
+- `public/assets/kartu-kredit/` berisi aset halaman kartu kredit.
+- `docs/research/bca-homepage/source.html` dan `mirror/_next/static/` menyimpan snapshot beranda sumber.
 
-`npm run check` memverifikasi HTML dan berkas statis yang diperlukan. Ini adalah snapshot situs sumber, sehingga kode JavaScript yang diunduh mengikuti build publiknya dan tidak sepraktis komponen React untuk diubah. Saat situs sumber menerbitkan build baru, snapshot perlu diperbarui agar tampilannya tetap sama.
+Server menggunakan Node.js. GitHub Pages hanya menyajikan berkas statis, jadi publikasi melalui Pages memerlukan tahap ekspor statis dan penyesuaian path sebelum diaktifkan. Repository ini belum mengaktifkan GitHub Pages.
 
-Berkas `src/` dari percobaan rekonstruksi sebelumnya masih tersimpan di proyek, tetapi tidak dipakai oleh `npm run start` dan tidak ditampilkan di port 3001.
-
-Lisensi MIT di `docs/template-LICENSE` hanya berasal dari template JCodesMore. Berkas dan aset dari situs BCA tidak mendapat lisensi MIT melalui proyek ini.
+Ini adalah prototipe tidak resmi. Aset dan konten BCA tidak diberikan lisensi terbuka melalui repository ini; lisensi MIT di `docs/template-LICENSE` hanya milik template asal.

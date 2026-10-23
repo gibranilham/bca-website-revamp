@@ -1,0 +1,55 @@
+.cc-detail-miles{background:#fff;color:#163e6c}.cc-detail-miles__inner{width:min(1280px,calc(100% - 80px));margin:auto;padding:80px 0}.cc-detail-miles__heading{display:flex;align-items:center;justify-content:space-between;gap:32px}.cc-detail-miles__eyebrow{margin:0 0 16px;color:#0067b8;font-size:14px;font-weight:700}.cc-detail-miles h2{margin:0;font-size:44px;line-height:1.15;letter-spacing:-.025em}.cc-detail-miles__heading img{width:min(30vw,445px);height:auto;object-fit:contain}.cc-detail-miles__intro{max-width:1280px;margin:32px 0 40px;color:#566573;font-size:16px;line-height:1.55}.cc-detail-miles__mobile-intro,.cc-detail-miles__mobile-currency,.cc-detail-miles__mobile-copy{display:none}.cc-detail-miles__calculator{display:grid;grid-template-columns:minmax(0,872fr) minmax(300px,376fr);gap:32px}.cc-detail-miles__form{min-width:0;min-height:408px;padding:20px;border:1px solid #d7e8f5;border-radius:16px;background:#fff}.cc-detail-miles__cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.cc-detail-miles__card{display:flex;min-width:0;min-height:168px;flex-direction:column;align-items:flex-start;gap:9px;padding:17px;border:1px solid #d7e4ee;border-radius:12px;background:#fff;color:#173d66;text-align:left;cursor:pointer;transition:border-color .2s ease,background-color .2s ease,transform .2s ease}.cc-detail-miles__card:hover{transform:translateY(-2px);border-color:#0068bd}.cc-detail-miles__card.is-selected{border-color:#2789d1;background:#e3f4ff}.cc-detail-miles__card img{width:58px;height:37px;object-fit:contain}.cc-detail-miles__card-text{display:flex;flex-direction:column;gap:9px}.cc-detail-miles__card-name{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;min-height:36px;font-size:12px;font-weight:700;line-height:1.45}.cc-detail-miles__card-rate{color:#5b7289;font-size:12px}.cc-detail-miles__label{display:block;margin:28px 0 11px;font-size:16px;font-weight:700}.cc-detail-miles__input-wrap{display:flex;align-items:center;height:44px;gap:12px;padding:0 16px;border:1px solid #9db7cd;border-radius:8px;color:#396788;font-size:15px}.cc-detail-miles__input-wrap:focus-within{outline:2px solid #0067b8;outline-offset:1px}.cc-detail-miles__input-wrap input{width:100%;border:0;background:transparent;color:#163e6c;font:inherit;outline:none}.cc-detail-miles__help{min-height:20px;margin:8px 0 12px;color:#8797a5;font-size:12px}.cc-detail-miles__quick{display:flex;flex-wrap:wrap;gap:10px}.cc-detail-miles__quick button{padding:7px 16px;border:1px solid #b4cadc;border-radius:999px;background:#fff;color:#28689c;font-size:12px;cursor:pointer}.cc-detail-miles__quick button.is-selected,.cc-detail-miles__quick button:hover{border-color:#0067b8;background:#e9f5ff}.cc-detail-miles__result{display:flex;min-height:408px;flex-direction:column;padding:24px;border-radius:16px;background:#00569d;color:#fff}.cc-detail-miles__result-label{margin:0;font-size:13px;font-weight:700;letter-spacing:.06em}.cc-detail-miles__number{display:flex;align-items:flex-end;gap:9px;margin-top:18px}.cc-detail-miles__number strong{font-size:60px;line-height:1;font-weight:700}.cc-detail-miles__number span{padding-bottom:6px;font-size:13px}.cc-detail-miles__from{margin:8px 0 0;font-size:12px}.cc-detail-miles__divider{height:1px;margin:26px 0;background:rgb(255 255 255 / 28%)}.cc-detail-miles__reward{margin:10px 0 11px;font-size:18px;font-weight:700;line-height:1.3}.cc-detail-miles__progress{height:8px;overflow:hidden;border-radius:99px;background:rgb(255 255 255 / 24%)}.cc-detail-miles__progress span{display:block;width:1%;height:100%;border-radius:inherit;background:#76d8ff;transition:width .2s ease}.cc-detail-miles__hint{margin:10px 0 18px;font-size:11px}.cc-detail-miles__result a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;margin-top:auto;border-radius:999px;background:#fff;color:#00569d;font-size:13px;font-weight:700;text-decoration:none}.cc-detail-miles__result a:hover{background:#dcf2ff}.cc-detail-miles__footnote{margin:10px 0 0;font-size:10px}.cc-detail-miles button:focus-visible,.cc-detail-miles a:focus-visible{outline:3px solid #39a6e8;outline-offset:2px}
+.cc-detail-miles__number .cc-detail-miles__number-meta{display:flex;flex-direction:column;min-width:0}
+.cc-detail-miles__number .cc-detail-miles__number-meta > span{padding-bottom:0}
+.cc-detail-miles__mobile-from{display:none}
+@media(max-width:1279px){.cc-detail-miles__inner{padding:64px 0}.cc-detail-miles h2{font-size:36px}.cc-detail-miles__calculator{gap:20px}.cc-detail-miles__cards{gap:8px}.cc-detail-miles__card{padding:12px}}
+@media(max-width:767px){
+  .cc-detail-miles{background:#e6f3ff}
+  .cc-detail-miles__inner{width:100%;margin:0;padding:40px 0}
+  .cc-detail-miles__heading{display:block;margin:0 16px}
+  .cc-detail-miles__heading img{display:none}
+  .cc-detail-miles__eyebrow{margin-bottom:16px;font-size:12px;line-height:12px;letter-spacing:.18em}
+  .cc-detail-miles h2{font-size:20px;line-height:30px;letter-spacing:0}
+  .cc-detail-miles__intro{display:none}
+  .cc-detail-miles__mobile-intro{display:block;min-height:54px;margin:16px 16px 0;color:#144e83;font-size:12px;line-height:18px}
+  .cc-detail-miles__mobile-intro button{padding:0;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+  .cc-detail-miles__calculator{display:block;margin-top:24px}
+  .cc-detail-miles__form{min-height:0;padding:0;border:0;border-radius:0;background:transparent}
+  .cc-detail-miles__cards{position:relative;display:flex;height:82px;gap:12px;overflow-x:auto;overflow-y:hidden;padding:0 16px;scroll-padding-inline:16px;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cc-detail-miles__cards::-webkit-scrollbar,.cc-detail-miles__quick::-webkit-scrollbar{display:none}
+  .cc-detail-miles__card{width:260px;min-width:260px;min-height:82px;height:82px;flex:0 0 260px;flex-direction:row;align-items:center;gap:8px;padding:8px;border-radius:8px;scroll-snap-align:start;transition:none}
+  .cc-detail-miles__card:hover{transform:none}
+  .cc-detail-miles__card.is-selected{border-color:#0085e8;background:#d1eaff}
+  .cc-detail-miles__card img{width:64px;height:40px;flex:none}
+  .cc-detail-miles__card-text{min-width:0;gap:0}
+  .cc-detail-miles__card-name{min-height:0;color:#005caa;font-size:14px;font-weight:600;line-height:21px}
+  .cc-detail-miles__card-rate{font-size:12px;line-height:18px}
+  .cc-detail-miles__label{margin:24px 16px 0;color:#494f57;font-size:16px;line-height:24px}
+  .cc-detail-miles__input-wrap{height:58px;gap:12px;margin:0 39px 0 16px;padding:0;border:0;border-bottom:2px solid #b7c3cd;border-radius:0;color:#494f57;font-size:16px}
+  .cc-detail-miles__input-wrap:focus-within{border-color:#005caa;outline:none}
+  .cc-detail-miles__desktop-currency,.cc-detail-miles__desktop-copy{display:none}
+  .cc-detail-miles__mobile-currency,.cc-detail-miles__mobile-copy{display:inline}
+  .cc-detail-miles__input-wrap input{color:#005caa;font-size:14px;font-weight:600}
+  .cc-detail-miles__help{display:none}
+  .cc-detail-miles__quick{height:40px;flex-wrap:nowrap;gap:8px;overflow-x:auto;margin-top:8px;padding:0 16px;scrollbar-width:none}
+  .cc-detail-miles__quick button{height:40px;flex:none;padding:0 12px;border-radius:8px;background:#fff;color:#526270;font-size:12px}
+  .cc-detail-miles__quick button.is-selected{border-color:#0085e8;background:#e6f3ff}
+  .cc-detail-miles__result{height:320px;min-height:320px;margin:34px 16px 10px;padding:16px;border-radius:20px;background:#005caa}
+  .cc-detail-miles__result-label{font-size:14px;font-weight:400;line-height:18px;letter-spacing:0}
+  .cc-detail-miles__result-label:has(.cc-detail-miles__mobile-copy){font-size:12px;line-height:16px}
+  .cc-detail-miles__number{min-height:40px;align-items:center;gap:8px;margin-top:20px}
+  .cc-detail-miles__number strong{flex:none;font-size:40px;line-height:40px}
+  .cc-detail-miles__number .cc-detail-miles__number-meta{gap:0;padding-bottom:0;font-size:14px;line-height:18px}
+  .cc-detail-miles__number .cc-detail-miles__mobile-from{display:block;font-size:12px;line-height:16px}
+  .cc-detail-miles__number .cc-detail-miles__mobile-from span{padding:0;font-size:inherit}
+  .cc-detail-miles__from{display:none}
+  .cc-detail-miles__divider{margin:20px 0;background:rgb(255 255 255 / 15%)}
+  .cc-detail-miles__reward{margin:12px 0;font-size:12px;font-weight:600;line-height:21px}
+  .cc-detail-miles__progress{height:6px;background:rgb(255 255 255 / 15%)}
+  .cc-detail-miles__progress span{background:#ff8a22}
+  .cc-detail-miles__hint{margin:10px 0 0;font-size:12px;line-height:16px}
+  .cc-detail-miles__result a{min-height:48px;font-size:16px}
+  .cc-detail-miles__footnote{display:none}
+}
+@media(max-width:359px){.cc-detail-miles__card{width:252px;min-width:252px;flex-basis:252px}.cc-detail-miles__card-name{font-size:13px}.cc-detail-miles__result-label{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.cc-detail-miles__card,.cc-detail-miles__progress span{transition:none}}

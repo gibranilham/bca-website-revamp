@@ -1,0 +1,181 @@
+.cc-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: 596px;
+  color: #fff;
+  background: #071626 url('/assets/kartu-kredit/hero-desktop.jpg') center / cover no-repeat;
+}
+
+.cc-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .58) 0, transparent 150px),
+    linear-gradient(90deg, rgba(0, 0, 0, .68) 0, rgba(0, 0, 0, .42) 35%, transparent 72%);
+}
+
+.cc-hero__content {
+  position: relative;
+  width: min(calc(100% - 160px), 1280px);
+  margin-inline: auto;
+  padding-top: 215px;
+}
+
+.cc-hero__eyebrow {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.cc-hero__title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0;
+}
+
+.cc-hero__title--mobile,
+.cc-hero__action-label--mobile {
+  display: none;
+}
+
+.cc-hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.cc-hero__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding-inline: 26px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .18s ease, border-color .18s ease;
+}
+
+.cc-hero__action:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.cc-hero__action--primary {
+  min-width: 182px;
+  border-color: #0066b6;
+  background: #0066b6;
+}
+
+.cc-hero__action--primary:hover {
+  border-color: #00569c;
+  background: #00569c;
+}
+
+.cc-hero__action--secondary {
+  min-width: 194px;
+  background: rgba(0, 0, 0, .2);
+}
+
+.cc-hero__action--secondary:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.cc-hero__microcopy {
+  margin: 20px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+@media (max-width: 767px) {
+  .cc-hero {
+    min-height: 486px;
+    background-image: url('/assets/kartu-kredit/hero-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .cc-hero::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .22) 0%, rgba(0, 0, 0, .12) 39%, rgba(0, 0, 0, .83) 74%, rgba(0, 0, 0, .94) 100%);
+  }
+
+  .cc-hero__content {
+    width: auto;
+    margin-inline: 16px;
+    padding-top: 260px;
+  }
+
+  .cc-hero__eyebrow {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .cc-hero__title--desktop,
+  .cc-hero__action-label--desktop {
+    display: none;
+  }
+
+  .cc-hero__title--mobile,
+  .cc-hero__action-label--mobile {
+    display: initial;
+  }
+
+  .cc-hero__title {
+    max-width: 343px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -.02em;
+  }
+
+  .cc-hero__actions {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .cc-hero__action {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 40px;
+    padding-inline: 8px;
+    font-size: 14px;
+  }
+
+  .cc-hero__microcopy {
+    max-width: 343px;
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 359px) {
+  .cc-hero__content {
+    padding-top: 250px;
+  }
+
+  .cc-hero__action {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-hero__action {
+    transition: none;
+  }
+}

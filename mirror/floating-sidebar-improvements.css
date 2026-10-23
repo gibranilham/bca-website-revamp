@@ -166,10 +166,15 @@
     width: 71px;
     height: 100px;
     border-radius: 40px;
+    transition: background-color 200ms ease;
   }
 
   #main-content aside[aria-label="Akses cepat"] > div > div:nth-child(1) {
     order: 1;
+  }
+
+  #main-content aside[aria-label="Akses cepat"] > div > div:hover,
+  #main-content:has([role="dialog"][aria-label="Produk"].opacity-100) aside[aria-label="Akses cepat"] > div > div:nth-child(1) {
     background: rgba(255, 255, 255, 0.1);
   }
 

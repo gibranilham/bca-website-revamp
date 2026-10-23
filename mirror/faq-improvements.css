@@ -1,5 +1,5 @@
 /* FAQ presentation from the supplied Figma frame; source accordion behavior stays intact. */
-#faq-section > div:first-child::before {
+#faq-section:not(.cc-faq) > div:first-child::before {
   content: "";
   position: absolute;
   inset: auto 0 0;
@@ -9,31 +9,31 @@
   pointer-events: none;
 }
 
-#faq-section > div:first-child > div[aria-hidden="true"] {
+#faq-section:not(.cc-faq) > div:first-child > div[aria-hidden="true"] {
   z-index: 1;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent) !important;
 }
 
-#faq-section .text-eyebrow-lg,
-#faq-section .text-eyebrow {
+#faq-section:not(.cc-faq) .text-eyebrow-lg,
+#faq-section:not(.cc-faq) .text-eyebrow {
   color: white;
   font-weight: 600;
   text-transform: uppercase;
   opacity: 1;
 }
 
-#faq-section .text-eyebrow-lg {
+#faq-section:not(.cc-faq) .text-eyebrow-lg {
   font-size: 14px;
   line-height: 14px;
 }
 
-#faq-section .text-eyebrow {
+#faq-section:not(.cc-faq) .text-eyebrow {
   font-size: 12px;
   line-height: 12px;
 }
 
 @media (min-width: 1280px) {
-  #faq-section .text-display {
+  #faq-section:not(.cc-faq) .text-display {
     width: 428px;
     max-width: 428px;
     font-size: 32px;
@@ -43,16 +43,16 @@
   }
 }
 
-#faq-section button[aria-expanded] > span {
+#faq-section:not(.cc-faq) button[aria-expanded] > span {
   color: white;
   opacity: 1;
 }
 
-#faq-section button[aria-expanded] > svg {
+#faq-section:not(.cc-faq) button[aria-expanded] > svg {
   display: none;
 }
 
-#faq-section button[aria-expanded]::after {
+#faq-section:not(.cc-faq) button[aria-expanded]::after {
   content: "";
   display: block;
   width: 24px;
@@ -64,29 +64,29 @@
   transition: transform 300ms ease;
 }
 
-#faq-section button[aria-expanded="true"]::after {
+#faq-section:not(.cc-faq) button[aria-expanded="true"]::after {
   transform: rotate(180deg);
 }
 
 @media (max-width: 1279px) {
-  #faq-section > div:last-child > div[aria-hidden="true"] > div:last-child {
+  #faq-section:not(.cc-faq) > div:last-child > div[aria-hidden="true"] > div:last-child {
     background: rgba(0, 0, 0, 0.4);
   }
 
-  #faq-section > div:last-child > div.relative.z-10 > img:first-child {
+  #faq-section:not(.cc-faq) > div:last-child > div.relative.z-10 > img:first-child {
     filter: brightness(0.78);
   }
 
-  #faq-section > div:last-child > div.relative.z-10 > div[aria-hidden="true"]:not(.pointer-events-none) {
+  #faq-section:not(.cc-faq) > div:last-child > div.relative.z-10 > div[aria-hidden="true"]:not(.pointer-events-none) {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent) !important;
   }
 
   /* Mobile FAQ composition from Figma frame 1:3370 (392 x 531). */
-  #faq-section > div:last-child {
+  #faq-section:not(.cc-faq) > div:last-child {
     background: #111418 url("/assets/faq-mobile-figma.jpg") center top / cover no-repeat;
   }
 
-  #faq-section > div:last-child::before {
+  #faq-section:not(.cc-faq) > div:last-child::before {
     content: "";
     position: absolute;
     z-index: 0;
@@ -98,24 +98,24 @@
     pointer-events: none;
   }
 
-  #faq-section > div:last-child > div[aria-hidden="true"],
-  #faq-section > div:last-child > div.relative.z-10 > img,
-  #faq-section > div:last-child > div.relative.z-10 > div[aria-hidden="true"] {
+  #faq-section:not(.cc-faq) > div:last-child > div[aria-hidden="true"],
+  #faq-section:not(.cc-faq) > div:last-child > div.relative.z-10 > img,
+  #faq-section:not(.cc-faq) > div:last-child > div.relative.z-10 > div[aria-hidden="true"] {
     display: none;
   }
 
-  #faq-section > div:last-child > div.relative.z-10.w-full.overflow-clip {
+  #faq-section:not(.cc-faq) > div:last-child > div.relative.z-10.w-full.overflow-clip {
     height: 132px;
   }
 
-  #faq-section > div:last-child .text-eyebrow {
+  #faq-section:not(.cc-faq) > div:last-child .text-eyebrow {
     font-size: 12px;
     line-height: 12px;
     text-transform: none;
     letter-spacing: normal;
   }
 
-  #faq-section > div:last-child .text-heading {
+  #faq-section:not(.cc-faq) > div:last-child .text-heading {
     top: 48px;
     bottom: auto;
     left: 16px;
@@ -127,11 +127,11 @@
     text-wrap: balance;
   }
 
-  #faq-section > div:last-child > .relative.z-10.-mt-6.w-full {
+  #faq-section:not(.cc-faq) > div:last-child > .relative.z-10.-mt-6.w-full {
     margin-top: 0;
   }
 
-  #faq-section > div:last-child .glass-panel {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
@@ -139,7 +139,7 @@
     backdrop-filter: none;
   }
 
-  #faq-section > div:last-child .glass-panel > div:first-child {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:first-child {
     box-sizing: border-box;
     height: 57px;
     gap: 16px;
@@ -150,21 +150,21 @@
     backdrop-filter: blur(40px);
   }
 
-  #faq-section > div:last-child .glass-panel > div:first-child > button {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:first-child > button {
     flex: 0 0 auto;
     height: 56px;
   }
 
-  #faq-section > div:last-child .glass-panel > div:first-child > button > span:first-child {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:first-child > button > span:first-child {
     font-size: 16px;
     line-height: 24px;
   }
 
-  #faq-section > div:last-child .glass-panel > div:first-child > button[aria-pressed="true"] > span:last-child {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:first-child > button[aria-pressed="true"] > span:last-child {
     background: #fff;
   }
 
-  #faq-section > div:last-child .glass-panel > div[data-lenis-prevent] {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div[data-lenis-prevent] {
     box-sizing: border-box;
     height: 210px;
     background: rgba(0, 0, 0, 0.5);
@@ -172,18 +172,18 @@
     backdrop-filter: blur(40px);
   }
 
-  #faq-section > div:last-child .glass-panel > div[data-lenis-prevent] button[aria-expanded] {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div[data-lenis-prevent] button[aria-expanded] {
     gap: 16px;
   }
 
-  #faq-section > div:last-child .glass-panel > div[data-lenis-prevent] button[aria-expanded] > span {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div[data-lenis-prevent] button[aria-expanded] > span {
     font-size: 14px;
     line-height: 21px;
     font-weight: 600;
     opacity: 1;
   }
 
-  #faq-section > div:last-child .glass-panel > div:last-child {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:last-child {
     box-sizing: border-box;
     height: 132px;
     gap: 16px;
@@ -194,25 +194,25 @@
     backdrop-filter: blur(42px);
   }
 
-  #faq-section > div:last-child .glass-panel > div:last-child > p {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:last-child > p {
     font-size: 16px;
     line-height: 24px;
   }
 
-  #faq-section > div:last-child .glass-panel > div:last-child > a {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:last-child > a {
     box-sizing: border-box;
     width: 237px;
     height: 48px;
     justify-content: center;
   }
 
-  #faq-section > div:last-child .glass-panel > div:last-child > a > img {
+  #faq-section:not(.cc-faq) > div:last-child .glass-panel > div:last-child > a > img {
     display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #faq-section button[aria-expanded]::after {
+  #faq-section:not(.cc-faq) button[aria-expanded]::after {
     transition: none;
   }
 }

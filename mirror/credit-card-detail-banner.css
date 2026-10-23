@@ -1,0 +1,123 @@
+.cc-detail-banner {
+  padding: 40px 0;
+  background: #e4f3ff;
+}
+
+.cc-detail-banner__inner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: min(1280px, calc(100% - 80px));
+  min-height: 265px;
+  margin: auto;
+  border-radius: 16px;
+  background: #7d6957 url('/assets/kartu-kredit/detail-compare-banner.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.cc-detail-banner__inner::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .72), rgba(0, 0, 0, .38) 42%, transparent 72%);
+  content: '';
+}
+
+.cc-detail-banner__content {
+  max-width: 580px;
+  padding: 32px 40px;
+}
+
+.cc-detail-banner h2 {
+  max-width: 500px;
+  margin: 0;
+  font-size: 31px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+.cc-detail-banner__mobile-title { display: none; }
+.cc-detail-banner p { margin: 10px 0 22px; font-size: 15px; }
+
+.cc-detail-banner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #fff;
+  color: #005ca7;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.cc-detail-banner a:hover { transform: translateY(-2px); background: #eaf6ff; }
+.cc-detail-banner a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+@media (max-width: 767px) {
+  .cc-detail-banner { padding: 0; }
+
+  .cc-detail-banner__inner {
+    align-items: flex-end;
+    width: 100%;
+    min-height: 341px;
+    border-radius: 0;
+    background-image: url('/assets/kartu-kredit/detail-compare-banner-mobile.png');
+    background-size: 100% auto;
+    background-position: center 39%;
+  }
+
+  .cc-detail-banner__inner::before {
+    background: linear-gradient(0deg, rgba(15, 15, 15, .78) 0%, rgba(15, 15, 15, .58) 37%, transparent 68%);
+  }
+
+  .cc-detail-banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: none;
+    padding: 0 16px 32px;
+  }
+
+  .cc-detail-banner__desktop-title { display: none; }
+  .cc-detail-banner__mobile-title { display: inline; }
+
+  .cc-detail-banner h2 {
+    max-width: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+
+  .cc-detail-banner p {
+    max-width: none;
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .cc-detail-banner a {
+    width: 100%;
+    min-height: 40px;
+    background: #005caa;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .cc-detail-banner a:hover { background: #0070c8; }
+}
+
+@media (max-width: 359px) {
+  .cc-detail-banner__inner { min-height: 355px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-detail-banner a { transition: none; }
+}

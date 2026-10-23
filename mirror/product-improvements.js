@@ -13,6 +13,18 @@
   const observedTimerNodes = new WeakSet();
   const animatedCarousels = new WeakSet();
 
+  // The source card uses Next's client router, which bypasses this mirror's local page route.
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    const card = event.target.closest('#products button[data-blueprint-part="productCard"][data-blueprint-label="Kartu Kredit"]');
+    if (!card) return;
+    const active = card.classList.contains('cursor-none') || card.style.height === '360px';
+    if (!active) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.location.assign('/kartu-kredit');
+  }, true);
+
   const smoothMobileCarousel = (section) => {
     const carousel = section.querySelector('.hide-scrollbar:has(> button[data-blueprint-part="productCard"])');
     if (!carousel || animatedCarousels.has(carousel)) return;

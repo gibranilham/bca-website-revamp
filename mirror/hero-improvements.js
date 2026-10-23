@@ -34,11 +34,29 @@
     }
   };
 
+  let scrollFrame = 0;
   document.addEventListener("click", (event) => {
     if (!(event.target instanceof Element)) return;
     const button = event.target.closest("button[data-bca-hero-scroll-products]");
     if (!button) return;
-    document.getElementById("products")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = document.getElementById("products");
+    if (!target) return;
+    cancelAnimationFrame(scrollFrame);
+    const start = scrollY;
+    const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+    const destination = Math.max(0, target.getBoundingClientRect().top + start - margin);
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.scrollTo(0, destination);
+      return;
+    }
+    const started = performance.now();
+    const tick = (now) => {
+      const progress = Math.min(1, (now - started) / 800);
+      const eased = progress < .5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      window.scrollTo(0, start + (destination - start) * eased);
+      if (progress < 1) scrollFrame = requestAnimationFrame(tick);
+    };
+    scrollFrame = requestAnimationFrame(tick);
   });
 
   const observer = new MutationObserver((mutations) => {

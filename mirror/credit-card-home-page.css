@@ -1,0 +1,9 @@
+body:not(:has(#card-list)):not(:has(#compare-table)):not(:has(#detail-benefits)) .page-stack > :nth-child(n+3) { visibility: hidden; }
+.bca-credit-home-runtime .cc-home-inactive { display: none !important; }
+.bca-credit-home-runtime #main-content { overflow-x: clip; }
+.bca-credit-home-runtime #promo,
+.bca-credit-home-runtime #news-section { scroll-margin-top: 132px; }
+@media (max-width: 1279px) {
+  .bca-credit-home-runtime #promo,
+  .bca-credit-home-runtime #news-section { scroll-margin-top: 104px; }
+}

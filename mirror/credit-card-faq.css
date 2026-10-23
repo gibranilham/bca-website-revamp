@@ -1,0 +1,50 @@
+.cc-faq{scroll-margin-top:132px;background:#f4f8fc;color:#394b5d}
+.cc-faq__inner{display:grid;grid-template-columns:432px 766px;max-width:1280px;min-height:565px;margin:auto;padding:80px 0 0}
+.cc-faq__heading{padding:0 28px 0 0}
+.cc-faq__eyebrow{margin:0 0 12px;color:#80878f;font-size:16px;line-height:24px}
+.cc-faq__heading h2{max-width:400px;margin:0;color:#1a568c;font-size:40px;font-weight:600;line-height:1.2;letter-spacing:-.018em}
+.cc-faq__panel{align-self:start;overflow:hidden;border-radius:20px 20px 0 0;background:#fff}
+.cc-faq__questions{min-height:375px}
+.cc-faq__item{border-bottom:1px solid #eff3f6}
+.cc-faq__item--mobile-only{display:none}
+.cc-faq__trigger{display:flex;width:100%;min-height:75px;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;border:0;background:transparent;color:#46515c;font:inherit;font-size:16px;font-weight:600;line-height:24px;text-align:left;cursor:pointer}
+.cc-faq__trigger svg{flex:none;transition:transform .3s ease-out}
+.cc-faq__item.is-open .cc-faq__trigger svg{transform:rotate(180deg)}
+.cc-faq__trigger:focus-visible{outline:3px solid #005caa;outline-offset:-3px}
+.cc-faq__answer-shell{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease-out}
+.cc-faq__item.is-open .cc-faq__answer-shell{grid-template-rows:1fr}
+.cc-faq__answer{min-height:0;overflow:hidden;padding:0 48px 0 24px}
+.cc-faq__answer p{padding-bottom:18px}
+.cc-faq__answer p{max-width:620px;margin:0;color:#596a79;font-size:14px;line-height:21px}
+.cc-faq__help{display:flex;min-height:110px;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-top:1px solid #e9eff4}
+.cc-faq__help p{margin:0;color:#48525c;font-size:16px;font-weight:600;line-height:24px}
+.cc-faq__actions{display:flex;gap:12px}
+.cc-faq__action{display:inline-flex;min-width:157px;min-height:40px;align-items:center;justify-content:center;padding:0 12px;border:1px solid #0069b8;border-radius:999px;font-size:14px;font-weight:600;text-align:center;text-decoration:none;white-space:nowrap}
+.cc-faq__action--primary{background:#0063b2;color:#fff}
+.cc-faq__action--secondary{min-width:230px;background:#fff;color:#0063b2}
+.cc-faq__action:focus-visible{outline:3px solid #005caa;outline-offset:3px}
+.cc-faq__mobile-copy{display:none}
+@media(max-width:1359px){.cc-faq__inner{grid-template-columns:minmax(0,36%) minmax(0,64%);padding-right:40px;padding-left:40px}.cc-faq__actions{gap:8px}.cc-faq__action{min-width:0}.cc-faq__action--secondary{min-width:0}}
+@media(max-width:900px){.cc-faq__inner{grid-template-columns:1fr;gap:24px;padding-bottom:64px}.cc-faq__panel{border-radius:20px}.cc-faq__heading h2{max-width:600px}}
+@media(max-width:767px){
+  .cc-faq{scroll-margin-top:104px;background:#fff}
+  .cc-faq__inner{display:block;min-height:487px;padding:40px 16px 0}
+  .cc-faq__heading{height:100px;padding:0}
+  .cc-faq__eyebrow{margin-bottom:10px;font-size:12px;line-height:18px}
+  .cc-faq__heading h2{max-width:343px;font-size:20px;line-height:28px;letter-spacing:0}
+  .cc-faq__panel{margin:0 -16px;border-radius:0;background:#fff}
+  .cc-faq__questions{min-height:222px}
+  .cc-faq__item--desktop-only{display:none}
+  .cc-faq__item--mobile-only{display:block}
+  .cc-faq__trigger{min-height:74px;padding:12px 16px;font-size:14px;line-height:20px}
+  .cc-faq__answer{padding:0 40px 0 16px}
+  .cc-faq__answer p{padding-bottom:16px}
+  .cc-faq__answer p{font-size:12px;line-height:18px}
+  .cc-faq__help{display:block;min-height:125px;padding:14px 16px 20px;border-top:1px solid #e9eff4}
+  .cc-faq__help p{margin-bottom:12px;font-size:14px;line-height:20px}
+  .cc-faq__actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .cc-faq__action,.cc-faq__action--secondary{min-width:0;min-height:40px;padding:0 8px;font-size:12px}
+  .cc-faq__desktop-copy{display:none}.cc-faq__mobile-copy{display:inline}
+}
+@media(max-width:359px){.cc-faq__heading h2{font-size:19px}.cc-faq__trigger{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.cc-faq__trigger svg,.cc-faq__answer-shell{transition:none}}

@@ -14,7 +14,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "node mirror/server.mjs",
+    "dev": "node --watch mirror/server.mjs",
     "build": "node scripts/verify-mirror.mjs",
     "start": "node mirror/server.mjs",
     "check": "node scripts/verify-mirror.mjs"

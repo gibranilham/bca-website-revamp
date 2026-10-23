@@ -1,0 +1,46 @@
+.cc-detail-hero{position:relative;isolation:isolate;min-height:622px;overflow:hidden;background:#81705e url('/assets/kartu-kredit/detail-hero-photo.jpg') center 52%/cover no-repeat;color:#fff}
+.cc-detail-hero::before{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 42%,transparent 76%),linear-gradient(180deg,rgba(0,0,0,.34),transparent 28%);content:''}
+.cc-detail-hero__inner{width:min(1200px,calc(100% - 80px));margin-inline:auto;padding-top:158px}
+.cc-detail-hero .cc-page-hero-nav{margin-bottom:52px}
+.cc-detail-hero h1{max-width:650px;margin:0;font-size:44px;font-weight:700;line-height:1.11;letter-spacing:-.025em}
+.cc-detail-hero__inner>p{max-width:565px;margin:12px 0 0;font-size:15px;line-height:1.55}
+.cc-detail-hero__mobile-description,.cc-detail-hero__highlights{display:none}
+.cc-detail-hero__actions{display:flex;align-items:center;gap:13px;margin-top:33px}
+.cc-detail-hero__apply,.cc-detail-hero__share{display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:999px;color:#fff;text-decoration:none;transition:background-color .2s ease,transform .2s ease}
+.cc-detail-hero__apply{padding:0 24px;background:#0067bb;font-size:15px;font-weight:700}
+.cc-detail-hero__apply:hover{background:#005499;transform:translateY(-2px)}
+.cc-detail-hero__share{width:44px;border:1px solid #fff;background:rgb(0 0 0 / 18%);cursor:pointer}
+.cc-detail-hero__share img{display:block;width:24px;height:24px}
+.cc-detail-hero__share:hover{background:rgb(255 255 255 / 20%)}
+.cc-detail-hero__share-status{font-size:13px}
+.cc-detail-hero a:focus-visible,.cc-detail-hero button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:767px){
+  .cc-detail-hero{min-height:526px;background-image:url('/assets/kartu-kredit/detail-hero-mobile.jpg');background-position:center;background-size:cover}
+  .cc-detail-hero::before{background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.6) 34%,rgba(0,0,0,.16) 58%,transparent 74%)}
+  .cc-detail-hero__inner{display:flex;flex-direction:column;justify-content:flex-end;min-height:526px;width:auto;margin:0 16px;padding:0 0 24px}
+  .cc-detail-hero .cc-page-hero-nav{display:none}
+  .cc-detail-hero h1{max-width:none;font-size:clamp(20px,6.4vw,24px);line-height:1.5;letter-spacing:0}
+  .cc-detail-hero__desktop-break,.cc-detail-hero__desktop-description{display:none}
+  .cc-detail-hero__inner>.cc-detail-hero__mobile-description{display:block;max-width:none;margin:4px 0 0;font-size:14px;line-height:21px}
+  .cc-detail-hero__highlights{display:flex;flex:none;align-items:center;box-sizing:border-box;width:calc(100% + 32px);height:73px;margin-top:16px;margin-left:-16px;padding-inline:16px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cc-detail-hero__highlights::-webkit-scrollbar{display:none}
+  .cc-detail-hero__highlights:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .cc-detail-hero__highlight-track{display:flex;flex:0 0 auto;gap:8px}
+  .cc-detail-hero__highlight{display:flex;height:73px;flex:none;flex-direction:column;gap:8px;padding:12px;border-radius:16px;background:rgb(0 0 0 / 40%)}
+  .cc-detail-hero__highlight:nth-child(1){width:120px}
+  .cc-detail-hero__highlight:nth-child(2){width:116px}
+  .cc-detail-hero__highlight:nth-child(3){width:119px}
+  .cc-detail-hero__highlight:nth-child(4){width:106px}
+  .cc-detail-hero__highlight strong{font-size:16px;font-weight:700;line-height:24px;white-space:nowrap}
+  .cc-detail-hero__highlight span{font-size:12px;line-height:17px;white-space:nowrap}
+  .cc-detail-hero__detail{display:flex;flex:0 0 60px;align-items:center;justify-content:center;height:48px;margin-left:12px;padding:0 4px;color:#fff;font-size:16px;font-weight:600;line-height:24px;text-align:center;text-decoration:none}
+  .cc-detail-hero__detail:hover{text-decoration:underline}
+  .cc-detail-hero__actions{width:100%;gap:16px;margin-top:16px}
+  .cc-detail-hero__apply,.cc-detail-hero__share{height:40px}
+  .cc-detail-hero__apply{flex:1;min-width:0;padding:0 12px;background:#005caa;font-size:14px;font-weight:600}
+  .cc-detail-hero__share{width:40px;flex:0 0 40px;background:transparent}
+  .cc-detail-hero__share-status{position:absolute;right:16px;bottom:4px;font-size:11px}
+  .bca-credit-detail-runtime #information{scroll-margin-top:104px}
+}
+@media(max-width:359px){.cc-detail-hero__inner{margin-inline:16px}.cc-detail-hero__highlight strong{font-size:15px}.cc-detail-hero__highlight span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.cc-detail-hero__apply,.cc-detail-hero__share{transition:none}}

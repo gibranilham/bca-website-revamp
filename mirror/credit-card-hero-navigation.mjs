@@ -1,0 +1,3 @@
+export function renderCreditCardHeroNavigation(currentPage) {
+  return `<div class="cc-page-hero-nav"><a class="cc-page-hero-nav__back" href="/kartu-kredit" aria-label="Kembali ke Kartu Kredit"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true"><path d="M19 12H5m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><nav class="cc-page-hero-nav__breadcrumb" aria-label="Breadcrumb"><a href="/kartu-kredit">Kartu Kredit</a><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span aria-current="page">${currentPage}</span></nav></div>`;
+}

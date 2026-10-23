@@ -1,0 +1,83 @@
+.cc-compare{position:relative;z-index:2;margin-top:-90px;background:linear-gradient(to bottom,transparent 90px,#e5f3ff 90px);color:#46515c}
+.cc-compare__hero-pin{position:fixed;z-index:20;top:0;right:0;left:0;height:636px;clip-path:inset(0 0 450px 0);background:#7c6c5d url('/assets/kartu-kredit/compare-hero-desktop.jpg') center calc(43% + var(--cc-pin-shift,0px)) / cover no-repeat;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s ease,visibility .16s ease}
+.cc-compare__hero-pin::before{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,21,25,.68),rgba(18,21,25,.32) 52%,transparent 82%),linear-gradient(0deg,rgba(15,17,19,.35),transparent 50%);content:''}
+.cc-compare.is-sticking .cc-compare__hero-pin{opacity:1;visibility:visible}
+.cc-compare__inner{max-width:1200px;margin:0 auto}
+.cc-compare__sticky{position:sticky;z-index:30;top:var(--cc-sticky-top,72px);overflow:hidden;border-radius:16px 16px 0 0;background:#fff;box-shadow:0 5px 18px rgba(18,56,83,.10);transition:top .3s ease}
+.cc-compare__cards{display:grid;height:var(--cc-cards-height,404px);grid-template-columns:repeat(3,minmax(0,1fr));overflow:hidden;border:1px solid #e3e9ee;border-bottom:0;border-radius:16px 16px 0 0;background:#fff}
+.cc-compare__card{position:relative;display:flex;min-width:0;flex-direction:column;gap:16px;overflow:hidden;padding:var(--cc-card-pad-top,24px) 24px var(--cc-card-pad-bottom,24px);border-right:1px solid #e1e7ec;isolation:isolate}
+.cc-compare__card::before{position:absolute;z-index:2;top:0;right:0;left:0;height:calc(var(--cc-card-pad-top,24px) + 70px);background:#fff;content:'';pointer-events:none}
+.cc-compare__card:last-child{border-right:0}
+.cc-compare__select-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.cc-compare__select-wrap{position:relative;z-index:3;flex:none}
+.cc-compare__select{position:relative;z-index:3;width:100%;height:56px;flex:none;padding:0 36px 0 16px;border:1px solid #b9c9d8;border-radius:9px;background:#fff;color:#242b32;font:inherit;font-size:14px;text-overflow:ellipsis;cursor:pointer}
+.cc-compare__select-value{display:none}
+.cc-compare__select:focus-visible,.cc-compare__tab:focus-visible,.cc-compare__apply:focus-visible{outline:3px solid #0068b7;outline-offset:2px}
+.cc-compare__details{display:flex;width:100%;flex:none;flex-direction:column;gap:16px;opacity:var(--cc-detail-opacity,1);transform:translateY(var(--cc-detail-shift,0px));will-change:transform,opacity}
+.cc-compare__card-visual{display:grid;width:100%;height:220px;flex:none;place-items:center;overflow:hidden;border-radius:9px}
+.cc-compare__card-visual img{display:block;width:100%;height:100%;object-fit:cover}
+.cc-compare__card-visual img[hidden],.cc-compare__card-placeholder[hidden]{display:none}
+.cc-compare__card-visual.is-empty{border:1px dashed #d5dce2;background:#e9ecef}
+.cc-compare__card-placeholder{max-width:180px;color:#9da7b0;font-size:14px;text-align:center}
+.cc-compare__apply{display:flex;width:100%;height:48px;flex:none;align-items:center;justify-content:center;border-radius:999px;background:#0068ba;color:#fff;font-size:14px;font-weight:700;text-decoration:none}
+.cc-compare__apply:hover{background:#005ba3}
+.cc-compare__apply[aria-disabled=true]{background:#e8ebee;color:#929ba5;pointer-events:none}
+.cc-compare.is-scrolled .cc-compare__details{visibility:hidden}
+.cc-compare__tabs{display:flex;height:52px;align-items:stretch;gap:0;overflow-x:auto;border:1px solid #e3e9ee;background:#fff;scrollbar-width:none;-ms-overflow-style:none}
+.cc-compare__tabs::-webkit-scrollbar{display:none;width:0;height:0}
+.cc-compare__tab{position:relative;min-width:146px;height:52px;flex:none;padding:0 16px;border:0;background:#fff;color:#868e96;font:inherit;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+.cc-compare__tab:last-child{min-width:212px}
+.cc-compare__tab.is-active{color:#0067b7}
+.cc-compare__tab.is-active::after{position:absolute;right:0;bottom:0;left:0;height:4px;border-radius:4px 4px 0 0;background:#0067b7;content:''}
+.cc-compare__mobile-label{display:none}
+.cc-compare__body{padding-bottom:80px;background:#fff}
+.cc-compare__group{scroll-margin-top:var(--cc-group-scroll-margin,248px)}
+.cc-compare__group h2{display:flex;min-height:53px;align-items:center;margin:0;padding:12px 20px;background:#d9edff;color:#084475;font-size:16px;font-weight:700}
+.cc-compare__row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-height:74px}
+.cc-compare__row:nth-of-type(odd){background:#f3f8fc}
+.cc-compare__row:nth-of-type(even){background:#fff}
+.cc-compare__cell{min-width:0;padding:13px 16px;font-size:14px;line-height:1.5}
+.cc-compare__cell.is-empty{opacity:.25}
+.cc-compare__cell h3{margin:0 0 16px;font-size:14px;font-weight:700}
+.cc-compare__cell p{margin:0;color:#525d67}
+.cc-compare__cell--feature{display:flex;min-height:53px;align-items:center;gap:14px}
+.cc-compare__feature-icon{width:20px;flex:none;font-size:22px;line-height:1;text-align:center}
+.cc-compare__status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:1279px){.cc-compare__hero-pin{clip-path:inset(0 0 458px 0)}.cc-compare__inner{margin:0 40px}.cc-compare__cards{height:var(--cc-cards-height,320px)}.cc-compare__card{padding:var(--cc-card-pad-top,24px) 16px var(--cc-card-pad-bottom,24px)}.cc-compare__card-visual{height:auto;aspect-ratio:1.6}}
+@media(max-width:767px){
+  .cc-compare{margin-top:0;background:#fff}
+  .cc-compare__hero-pin{height:436px;clip-path:inset(0 0 316px 0);background-image:url('/assets/kartu-kredit/compare-hero-mobile.jpg');background-size:391px 536px;background-position:center calc(-55px + var(--cc-pin-shift,0px))}
+  .cc-compare__hero-pin::before{background:linear-gradient(180deg,rgba(10,14,18,.14),rgba(10,14,18,.16) 42%,rgba(10,14,18,.78) 100%)}
+  .cc-compare__inner{margin:0}
+  .cc-compare__sticky{top:var(--cc-sticky-top,56px);border-radius:0}
+  .cc-compare__cards{height:var(--cc-cards-height,238px);grid-template-columns:repeat(2,minmax(0,1fr));border-radius:0}
+  .cc-compare__card{gap:12px;padding:var(--cc-card-pad-top,12px) 8px var(--cc-card-pad-bottom,16px)}
+  .cc-compare__card:first-child{padding-left:16px}
+  .cc-compare__card:nth-child(2){padding-right:16px;border-right:0}
+  .cc-compare__card:nth-child(3){display:none}
+  .cc-compare__card::before{height:calc(var(--cc-card-pad-top,12px) + var(--cc-select-height,44px) + 14px)}
+  .cc-compare__select-wrap{height:var(--cc-select-height,44px);border:1px solid #e3e9ee;border-radius:9px;background:#f6f7f8}
+  .cc-compare__select-wrap::after{position:absolute;z-index:1;top:50%;right:11px;width:8px;height:8px;border-right:1.5px solid #242b32;border-bottom:1.5px solid #242b32;content:'';pointer-events:none;transform:translateY(-70%) rotate(45deg)}
+  .cc-compare__select-wrap:focus-within{outline:3px solid #0068b7;outline-offset:2px}
+  .cc-compare__select{position:absolute;z-index:2;inset:0;width:100%;height:100%;padding:0;border:0;opacity:0;cursor:pointer}
+  .cc-compare__select-value{position:absolute;z-index:1;inset:0;display:flex;align-items:center;padding:8px 30px 8px 10px;color:#242b32;font-size:10px;line-height:1.35;white-space:normal;overflow-wrap:anywhere;pointer-events:none}
+  .cc-compare__details{gap:12px}
+  .cc-compare__card-visual{height:102px;border-radius:6px}
+  .cc-compare__card-placeholder{font-size:10px}
+  .cc-compare__apply{height:40px;margin-top:0;font-size:11px}
+  .cc-compare__tabs{height:48px;padding:0 8px}
+  .cc-compare__tab,.cc-compare__tab:last-child{min-width:auto;height:48px;padding:0 16px;font-size:12px}
+  .cc-compare__mobile-label{display:inline}
+  .cc-compare__desktop-label{display:none}
+  .cc-compare__body{overflow:clip;margin:16px 16px 48px;padding:0;border:1px solid #d5dce2;border-radius:12px;background:#fff}
+  .cc-compare__group{scroll-margin-top:var(--cc-group-scroll-margin,206px)}
+  .cc-compare__group h2{min-height:29px;padding:7px 12px;font-size:12px}
+  .cc-compare__row{grid-template-columns:repeat(2,minmax(0,1fr));min-height:44px}
+  .cc-compare__cell{padding:9px 8px;font-size:10px;line-height:1.45}
+  .cc-compare__cell:nth-child(3){display:none}
+  .cc-compare__cell h3{margin-bottom:9px;font-size:11px}
+  .cc-compare__cell--feature{min-height:44px;gap:5px}
+  .cc-compare__feature-icon{width:14px;font-size:16px}
+}
+@media(max-width:374px){.cc-compare{--cc-select-height:54px}.cc-compare__cards{height:var(--cc-cards-height,248px)}.cc-compare__card:first-child{padding-left:10px}.cc-compare__card:nth-child(2){padding-right:10px}.cc-compare__select-value{font-size:9px}.cc-compare__apply{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.cc-compare__tabs{scroll-behavior:auto}.cc-compare__hero-pin,.cc-compare__sticky{transition:none}.cc-compare__details{transform:none}}
