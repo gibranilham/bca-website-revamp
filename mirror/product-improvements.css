@@ -88,12 +88,20 @@
   #products .bca-goodplan-banner > a {
     position: absolute;
     top: 50px;
-    left: calc(50% - 70px);
-    width: 140px;
+    left: 50%;
+    display: flex;
+    width: max-content;
     height: 32px;
+    align-items: center;
+    justify-content: center;
     border-radius: 999px;
-    color: transparent;
-    font-size: 0;
+    background: #fff;
+    padding-inline: 24px;
+    color: #005caa;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translateX(-50%);
+    white-space: nowrap;
   }
 }
 

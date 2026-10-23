@@ -51,7 +51,7 @@
   .cc-tutorial__desktop-layout{display:none}
   .cc-tutorial__mobile-layout{display:block}
   .cc-tutorial__mobile-graphic{height:287px;margin:24px 16px 0;padding-top:10px}
-  .cc-tutorial__mobile-graphic img{display:block;width:100%;max-width:343px;height:277px;object-fit:contain}
+  .cc-tutorial__mobile-graphic img{display:block;width:100%;max-width:343px;height:277px;margin-inline:auto;object-fit:contain}
   .cc-tutorial__show-steps{display:flex;align-items:center;justify-content:center;gap:8px;width:134px;height:24px;margin:24px auto 0;padding:0;border:0;background:transparent;color:#fff;font:inherit;font-size:14px;cursor:pointer}
   .cc-tutorial__show-steps span{display:inline-block;font-size:22px;line-height:1;transition:transform .2s}
   .cc-tutorial__show-steps[aria-expanded="true"] span{transform:rotate(180deg)}

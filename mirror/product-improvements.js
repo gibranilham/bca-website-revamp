@@ -162,11 +162,11 @@
           const title = document.createElement("p");
           title.textContent = "Wujudkan Rencanamu bersama Goodplan BCA";
           const link = document.createElement("a");
-          link.textContent = "GoodPlan BCA";
           banner.append(title, link);
           content.append(banner);
         }
         const link = banner.querySelector("a");
+        if (link.textContent !== "Eksplore Goodplan") link.textContent = "Eksplore Goodplan";
         link.href = originalLink.href;
         link.target = originalLink.target;
         link.rel = originalLink.rel;
