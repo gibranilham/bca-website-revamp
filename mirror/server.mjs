@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import { createReadStream, readFileSync, statSync } from "node:fs";
 import { resolve, sep } from "node:path";
+import { pathToFileURL } from "node:url";
 import { renderCreditCardHomePage } from "./credit-card-home-page.mjs";
 import { renderCreditCardComparePage } from "./credit-card-compare-page.mjs";
 import { renderCreditCardDetailPage } from "./credit-card-detail-page.mjs";
@@ -60,7 +61,7 @@ function serve(res, filename, fallbackUrl) {
   }
 }
 
-createServer((req, res) => {
+export function handleRequest(req, res) {
   let pathname;
   let requestUrl;
   try {
@@ -124,6 +125,10 @@ createServer((req, res) => {
     if (path.startsWith(resolve(root, "public") + sep)) return serve(res, path, sourceOrigin + (req.url || pathname));
   }
   res.writeHead(302, { Location: `${sourceOrigin}${req.url || pathname}` }).end();
-}).listen(port, host, () => {
-  console.log(`Source runtime mirror running on http://localhost:${port}`);
-});
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  createServer(handleRequest).listen(port, host, () => {
+    console.log(`Source runtime mirror running on http://localhost:${port}`);
+  });
+}
