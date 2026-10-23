@@ -3,8 +3,11 @@
   "framework": null,
   "buildCommand": "npm run check",
   "functions": {
-    "server.ts": {
+    "api/index.mjs": {
       "includeFiles": "{mirror/**,public/**,docs/research/bca-homepage/source.html}"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index?sitePath=$1" }
+  ]
 }
